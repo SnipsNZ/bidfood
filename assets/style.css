@@ -179,7 +179,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 155px 0 3vw;
+  padding: 0 200px 0 3vw;
   flex-shrink: 0;
   z-index: 10;
 }
@@ -474,6 +474,32 @@ html, body {
 
 /* BOTTOM ACCENT BAR */
 .slide-bottom-bar { height: 4px; flex-shrink: 0; }
+
+/* ========================
+   PLAY BUTTON
+======================== */
+#play-btn {
+  position: fixed;
+  top: 14px;
+  right: 148px;
+  z-index: 9999;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  font-size: 13px;
+  width: 36px;
+  height: 36px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-radius: 4px;
+  line-height: 1;
+}
+body.on-product #play-btn { display: flex; }
+#play-btn:hover  { background: rgba(255,255,255,0.22); }
+#play-btn.active { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.6); }
 
 /* ========================
    DARK MODE BUTTON

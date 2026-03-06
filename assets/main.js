@@ -48,6 +48,7 @@ function showTitleSlide() {
   el.classList.add('active', 'entering');
   setTimeout(() => el.classList.remove('entering'), 500);
   document.body.classList.remove('on-product');
+  pauseProductPlay();
   // restart slideshow
   if (autoTimer) clearInterval(autoTimer);
   autoTimer = setInterval(nextTitleSlide, 5000);
@@ -61,7 +62,16 @@ function showProductSlide(n) {
   el.classList.add('active', 'entering');
   setTimeout(() => el.classList.remove('entering'), 500);
   document.body.classList.add('on-product');
-  // pause slideshow while on product pages
+  currentProductIdx = n;
+  // reset product auto-play timer on manual navigation
+  if (productTimer) {
+    clearInterval(productTimer);
+    productTimer = setInterval(() => {
+      currentProductIdx = (currentProductIdx % 3) + 1;
+      showProductSlide(currentProductIdx);
+    }, 10000);
+  }
+  // pause title slideshow
   if (autoTimer) clearInterval(autoTimer);
   autoTimer = null;
 }
@@ -103,6 +113,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   autoTimer = setInterval(nextTitleSlide, 5000);
 });
+
+// ========================
+// PRODUCT AUTO-PLAY
+// ========================
+let productTimer = null;
+let currentProductIdx = 1;
+
+function toggleProductPlay() {
+  productTimer ? pauseProductPlay() : startProductPlay();
+}
+
+function startProductPlay() {
+  const btn = document.getElementById('play-btn');
+  btn.textContent = '⏸';
+  btn.title = 'Pause';
+  btn.classList.add('active');
+  productTimer = setInterval(() => {
+    currentProductIdx = (currentProductIdx % 3) + 1;
+    showProductSlide(currentProductIdx);
+  }, 10000);
+}
+
+function pauseProductPlay() {
+  clearInterval(productTimer);
+  productTimer = null;
+  const btn = document.getElementById('play-btn');
+  btn.textContent = '▶';
+  btn.title = 'Auto-play products';
+  btn.classList.remove('active');
+}
 
 // ========================
 // DARK MODE  (3-state cycle: light → dark → tinted → light)
