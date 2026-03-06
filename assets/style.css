@@ -608,10 +608,25 @@ html, body {
 .calc-input.right { text-align: right; }
 .calc-input::placeholder { color: #ccc; }
 
+.calc-section-label {
+  font-family: 'Gotham', sans-serif;
+  font-size: clamp(8px, 0.68vw, 11px);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--mid-grey);
+}
+
+.calc-prep-note {
+  font-size: clamp(11px, 0.9vw, 14px);
+  color: #555;
+  font-style: italic;
+  margin-top: -0.4vh;
+}
+
 .calc-divider {
   height: 1px;
   background: var(--border);
-  margin: 0.4vh 0;
+  margin: 0.2vh 0;
 }
 
 .calc-results {
@@ -640,6 +655,9 @@ html, body {
   font-size: clamp(14px, 1.2vw, 20px);
   color: var(--charcoal);
 }
+.calc-result-row.highlight .calc-result-label { color: var(--wonton); }
+.calc-result-row.highlight .calc-result-val   { color: var(--wonton); }
+
 .calc-result-row.final {
   border-top: 1.5px solid var(--charcoal);
   margin-top: 0.3vh;

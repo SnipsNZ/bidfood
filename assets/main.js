@@ -118,38 +118,46 @@ function handleCalcOverlayClick(e) {
 }
 
 function calcPrice() {
-  const cost     = parseFloat(document.getElementById('c-cost').value)    || 0;
-  const freight  = parseFloat(document.getElementById('c-freight').value)  || 0;
-  const labour   = parseFloat(document.getElementById('c-labour').value)   || 0;
-  const overhead = parseFloat(document.getElementById('c-overhead').value) || 0;
-  const margin   = parseFloat(document.getElementById('c-margin').value)   || 0;
-  const gst      = parseFloat(document.getElementById('c-gst').value)      || 0;
+  const cost       = parseFloat(document.getElementById('c-cost').value)       || 0;
+  const freight    = parseFloat(document.getElementById('c-freight').value)     || 0;
+  const prepTime   = parseFloat(document.getElementById('c-preptime').value)    || 0;
+  const labourRate = parseFloat(document.getElementById('c-labourrate').value)  || 0;
+  const margin     = parseFloat(document.getElementById('c-margin').value)      || 0;
+  const gst        = parseFloat(document.getElementById('c-gst').value)         || 0;
 
-  const fmt = v => '$' + v.toFixed(2);
+  const fmt  = v => '$' + v.toFixed(2);
   const dash = '—';
 
+  // Prep labour cost: time in hours × hourly rate
+  const prepLabour = (prepTime / 60) * labourRate;
+  document.getElementById('r-prep').textContent = prepLabour > 0 ? fmt(prepLabour) : dash;
+
   if (cost <= 0) {
-    document.getElementById('r-cost').textContent  = dash;
-    document.getElementById('r-exgst').textContent = dash;
-    document.getElementById('r-gst').textContent   = dash;
-    document.getElementById('r-final').textContent = dash;
+    document.getElementById('r-landed').textContent = dash;
+    document.getElementById('r-cost').textContent   = dash;
+    document.getElementById('r-exgst').textContent  = dash;
+    document.getElementById('r-gst').textContent    = dash;
+    document.getElementById('r-final').textContent  = dash;
     return;
   }
 
-  // Total cost: add freight, labour, overhead as % of cost price
-  const totalCost = cost * (1 + (freight + labour + overhead) / 100);
+  // Landed cost: purchase price + freight %
+  const landed = cost * (1 + freight / 100);
 
-  // Apply margin: selling price (ex GST) = totalCost / (1 - margin%)
+  // Total cost including prep labour
+  const totalCost = landed + prepLabour;
+
+  // Sell price ex GST via target margin
   const marginFactor = margin < 100 ? (1 - margin / 100) : null;
-  const exGST = marginFactor ? totalCost / marginFactor : 0;
-
+  const exGST  = marginFactor ? totalCost / marginFactor : 0;
   const gstAmt = exGST * (gst / 100);
   const final  = exGST + gstAmt;
 
-  document.getElementById('r-cost').textContent  = fmt(totalCost);
-  document.getElementById('r-exgst').textContent = marginFactor ? fmt(exGST) : '—';
-  document.getElementById('r-gst').textContent   = marginFactor ? fmt(gstAmt) : '—';
-  document.getElementById('r-final').textContent = marginFactor ? fmt(final)  : '—';
+  document.getElementById('r-landed').textContent = fmt(landed);
+  document.getElementById('r-cost').textContent   = fmt(totalCost);
+  document.getElementById('r-exgst').textContent  = marginFactor ? fmt(exGST)  : dash;
+  document.getElementById('r-gst').textContent    = marginFactor ? fmt(gstAmt) : dash;
+  document.getElementById('r-final').textContent  = marginFactor ? fmt(final)  : dash;
 }
 
 // ========================

@@ -296,41 +296,50 @@
 <div id="calc-overlay" class="calc-overlay" onclick="handleCalcOverlayClick(event)">
   <div class="calc-modal">
     <div class="calc-header">
-      <div class="calc-title">Price Calculator</div>
+      <div class="calc-title">Menu Pricing Tool</div>
       <button class="calc-close" onclick="toggleCalc()">✕</button>
     </div>
     <div class="calc-body">
+
+      <div class="calc-section-label">Your Purchase Costs</div>
       <div class="calc-row">
-        <label class="calc-label">Cost Price</label>
+        <label class="calc-label">Purchase Price (per unit)</label>
         <div class="calc-input-wrap">
           <span class="calc-affix">$</span>
           <input class="calc-input" id="c-cost" type="number" min="0" step="0.01" placeholder="0.00" oninput="calcPrice()">
         </div>
       </div>
       <div class="calc-row">
-        <label class="calc-label">Freight &amp; Handling</label>
+        <label class="calc-label">Freight &amp; Distribution</label>
         <div class="calc-input-wrap">
           <input class="calc-input right" id="c-freight" type="number" min="0" step="0.1" placeholder="0" oninput="calcPrice()">
           <span class="calc-affix">%</span>
         </div>
       </div>
-      <div class="calc-row">
-        <label class="calc-label">Labour</label>
-        <div class="calc-input-wrap">
-          <input class="calc-input right" id="c-labour" type="number" min="0" step="0.1" placeholder="0" oninput="calcPrice()">
-          <span class="calc-affix">%</span>
-        </div>
-      </div>
-      <div class="calc-row">
-        <label class="calc-label">Overhead</label>
-        <div class="calc-input-wrap">
-          <input class="calc-input right" id="c-overhead" type="number" min="0" step="0.1" placeholder="0" oninput="calcPrice()">
-          <span class="calc-affix">%</span>
-        </div>
-      </div>
+
       <div class="calc-divider"></div>
+      <div class="calc-section-label">Preparation</div>
+      <div class="calc-prep-note">Ready to serve in minutes — no skilled labour required.</div>
       <div class="calc-row">
-        <label class="calc-label">Margin</label>
+        <label class="calc-label">Prep Time</label>
+        <div class="calc-input-wrap">
+          <input class="calc-input right" id="c-preptime" type="number" min="0" step="1" value="6" oninput="calcPrice()">
+          <span class="calc-affix">min</span>
+        </div>
+      </div>
+      <div class="calc-row">
+        <label class="calc-label">Kitchen Labour Rate</label>
+        <div class="calc-input-wrap">
+          <span class="calc-affix">$</span>
+          <input class="calc-input" id="c-labourrate" type="number" min="0" step="0.5" value="25" oninput="calcPrice()">
+          <span class="calc-affix">/hr</span>
+        </div>
+      </div>
+
+      <div class="calc-divider"></div>
+      <div class="calc-section-label">Your Sell Price</div>
+      <div class="calc-row">
+        <label class="calc-label">Target Margin</label>
         <div class="calc-input-wrap">
           <input class="calc-input right" id="c-margin" type="number" min="0" max="99" step="0.1" placeholder="0" oninput="calcPrice()">
           <span class="calc-affix">%</span>
@@ -343,21 +352,30 @@
           <span class="calc-affix">%</span>
         </div>
       </div>
+
       <div class="calc-results">
+        <div class="calc-result-row">
+          <span class="calc-result-label">Landed Cost (inc. freight)</span>
+          <span class="calc-result-val" id="r-landed">—</span>
+        </div>
+        <div class="calc-result-row highlight">
+          <span class="calc-result-label">Prep Labour per Serve</span>
+          <span class="calc-result-val" id="r-prep">—</span>
+        </div>
         <div class="calc-result-row">
           <span class="calc-result-label">Total Cost</span>
           <span class="calc-result-val" id="r-cost">—</span>
         </div>
         <div class="calc-result-row">
-          <span class="calc-result-label">Selling Price (ex GST)</span>
+          <span class="calc-result-label">Sell Price (ex GST)</span>
           <span class="calc-result-val" id="r-exgst">—</span>
         </div>
         <div class="calc-result-row">
-          <span class="calc-result-label">GST Amount</span>
+          <span class="calc-result-label">GST</span>
           <span class="calc-result-val" id="r-gst">—</span>
         </div>
         <div class="calc-result-row final">
-          <span class="calc-result-label">Final Price (inc GST)</span>
+          <span class="calc-result-label">Sell Price (inc GST)</span>
           <span class="calc-result-val" id="r-final">—</span>
         </div>
       </div>
