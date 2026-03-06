@@ -297,7 +297,7 @@ html, body {
   padding: 2.5vh 2vw;
   display: flex;
   flex-direction: column;
-  gap: 3vh;
+  gap: 4.5vh;
   overflow-y: auto;
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
