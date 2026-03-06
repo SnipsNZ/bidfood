@@ -320,16 +320,18 @@ html, body {
 
 .box-img {
   width: 100%;
-  flex-shrink: 0;
-  max-height: 42%;
+  flex: 1;
+  min-height: 0;
   object-fit: contain;
-  object-position: top center;
+  object-position: center;
   background: transparent;
   display: block;
 }
 
 .nutrition-section {
-  flex-shrink: 0;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 /* ========================
