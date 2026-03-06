@@ -82,8 +82,9 @@ html, body {
   width: 48%;
   display: flex; flex-direction: column;
   justify-content: center; align-items: flex-start;
-  padding: 6vh 5vw 6vh 3vw;
+  padding: 5vh 5vw 5vh 3vw;
   position: relative; z-index: 3;
+  gap: 0;
 }
 
 .title-logo {
@@ -103,39 +104,41 @@ html, body {
 
 .product-names-container {
   position: relative;
-  height: 28vh;
   width: 100%;
-  margin-bottom: 2.5vh;
+  height: 22vh;
+  margin-bottom: 2vh;
+  overflow: visible;
 }
 
 .product-name-item {
-  position: absolute; top: 0; left: 0;
+  position: absolute; top: 0; left: 0; right: 0;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.6s ease;
 }
-.product-name-item.active { opacity: 1; }
+.product-name-item.active {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .product-name-item h1 {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(32px, 5.5vw, 90px);
+  font-size: clamp(32px, 5.2vw, 85px);
   line-height: 0.95;
-  color: white;
-  margin-bottom: 1.5vh;
+  margin-bottom: 1.2vh;
   letter-spacing: -0.01em;
 }
 
 .product-name-item .product-tagline {
   font-size: clamp(10px, 0.95vw, 15px);
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.75);
   font-weight: 300;
   max-width: 26vw;
   line-height: 1.55;
 }
 
 .title-accent-bar {
-  width: 60px; height: 4px;
-  margin-bottom: 2vh;
-  transition: background 0.6s ease;
+  display: none;
 }
 
 .title-nav {

@@ -24,7 +24,6 @@ function goToTitleSlide(idx) {
   document.getElementById(next.nameId).classList.add('active');
   document.getElementById(next.dotId).classList.add('active');
   document.getElementById('accentBar').style.background = next.color;
-  document.getElementById('titleBottomBar').style.background = next.color;
 
   clearInterval(autoTimer);
   autoTimer = setInterval(nextTitleSlide, 5000);
@@ -37,19 +36,18 @@ function nextTitleSlide() {
 // ========================
 // PAGE NAVIGATION
 // ========================
-const allSlides = document.querySelectorAll('.slide');
-
 function showTitleSlide() {
-  allSlides.forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
   const el = document.getElementById('title-slide');
   el.classList.add('active', 'entering');
   setTimeout(() => el.classList.remove('entering'), 500);
 }
 
 function showProductSlide(n) {
-  allSlides.forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
   const ids = [null, 'slide-tonkotsu', 'slide-wonton', 'slide-dandan'];
   const el = document.getElementById(ids[n]);
+  if (!el) return;
   el.classList.add('active', 'entering');
   setTimeout(() => el.classList.remove('entering'), 500);
 }
