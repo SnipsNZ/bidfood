@@ -2,30 +2,36 @@
 // TITLE SLIDESHOW
 // ========================
 const titleSlides = [
-  { color: 'var(--tonkotsu)', bowlId: 'bowl0', nameId: 'name0', dotId: 'dot0' },
-  { color: 'var(--wonton)',   bowlId: 'bowl1', nameId: 'name1', dotId: 'dot1' },
-  { color: 'var(--dandan)',   bowlId: 'bowl2', nameId: 'name2', dotId: 'dot2' },
+  { color: 'var(--tonkotsu)', bowlId: 'bowl0', nameId: 'name0' },
+  { color: 'var(--wonton)',   bowlId: 'bowl1', nameId: 'name1' },
+  { color: 'var(--dandan)',   bowlId: 'bowl2', nameId: 'name2' },
 ];
 
 let currentTitleSlide = 0;
-let autoTimer;
+let autoTimer = null;
 
 function goToTitleSlide(idx) {
   const prev = titleSlides[currentTitleSlide];
   const next = titleSlides[idx];
 
-  document.getElementById(prev.bowlId).classList.remove('visible');
+  // hide previous bowl — reset animation by cloning
+  const prevBowl = document.getElementById(prev.bowlId);
+  prevBowl.classList.remove('visible');
+
   document.getElementById(prev.nameId).classList.remove('active');
-  document.getElementById(prev.dotId).classList.remove('active');
 
   currentTitleSlide = idx;
 
-  document.getElementById(next.bowlId).classList.add('visible');
-  document.getElementById(next.nameId).classList.add('active');
-  document.getElementById(next.dotId).classList.add('active');
-  document.getElementById('accentBar').style.background = next.color;
+  // show next bowl — re-trigger zoom animation
+  const nextBowl = document.getElementById(next.bowlId);
+  nextBowl.classList.remove('visible');
+  // force reflow so animation restarts
+  void nextBowl.offsetWidth;
+  nextBowl.classList.add('visible');
 
-  clearInterval(autoTimer);
+  document.getElementById(next.nameId).classList.add('active');
+
+  if (autoTimer) clearInterval(autoTimer);
   autoTimer = setInterval(nextTitleSlide, 5000);
 }
 
@@ -41,6 +47,9 @@ function showTitleSlide() {
   const el = document.getElementById('title-slide');
   el.classList.add('active', 'entering');
   setTimeout(() => el.classList.remove('entering'), 500);
+  // restart slideshow
+  if (autoTimer) clearInterval(autoTimer);
+  autoTimer = setInterval(nextTitleSlide, 5000);
 }
 
 function showProductSlide(n) {
@@ -50,6 +59,9 @@ function showProductSlide(n) {
   if (!el) return;
   el.classList.add('active', 'entering');
   setTimeout(() => el.classList.remove('entering'), 500);
+  // pause slideshow while on product pages
+  if (autoTimer) clearInterval(autoTimer);
+  autoTimer = null;
 }
 
 // ========================
@@ -58,11 +70,10 @@ function showProductSlide(n) {
 document.addEventListener('keydown', e => {
   const active = document.querySelector('.slide.active');
   if (!active) return;
-
   if (active.id === 'title-slide') {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextTitleSlide();
     if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   goToTitleSlide((currentTitleSlide + 2) % 3);
-    if (e.key === 'Enter' || e.key === ' ')               showProductSlide(currentTitleSlide + 1);
+    if (e.key === 'Enter' || e.key === ' ') showProductSlide(currentTitleSlide + 1);
   } else {
     const order = ['slide-tonkotsu', 'slide-wonton', 'slide-dandan'];
     const idx = order.indexOf(active.id);
@@ -79,4 +90,10 @@ document.addEventListener('keydown', e => {
 // ========================
 // INIT
 // ========================
-autoTimer = setInterval(nextTitleSlide, 5000);
+document.addEventListener('DOMContentLoaded', () => {
+  // wire up the view products button properly
+  document.getElementById('view-products-btn').addEventListener('click', () => {
+    showProductSlide(currentTitleSlide + 1);
+  });
+  autoTimer = setInterval(nextTitleSlide, 5000);
+});
