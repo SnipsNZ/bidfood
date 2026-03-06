@@ -474,6 +474,103 @@ html, body {
 .slide-bottom-bar { height: 4px; flex-shrink: 0; }
 
 /* ========================
+   DARK MODE BUTTON
+======================== */
+#dark-btn {
+  position: fixed;
+  top: 14px;
+  right: 104px;
+  z-index: 9999;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  font-size: 17px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-radius: 4px;
+  line-height: 1;
+}
+#dark-btn:hover { background: rgba(255,255,255,0.22); }
+#dark-btn.active { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.6); }
+
+/* ========================
+   DARK MODE — product slides
+======================== */
+body.dark-mode .product-slide {
+  background: #1C1C1E;
+}
+body.dark-mode .product-center {
+  border-left-color: #333;
+  border-right-color: #333;
+}
+body.dark-mode .product-category {
+  color: #666;
+}
+body.dark-mode .product-desc {
+  color: rgba(255,255,255,0.6);
+}
+body.dark-mode .spec-section-title {
+  color: #666;
+  border-bottom-color: #333;
+}
+body.dark-mode .ingredients-text {
+  color: rgba(255,255,255,0.65);
+}
+body.dark-mode .ingredients-text strong {
+  color: white;
+}
+body.dark-mode .allergen-tag {
+  border-color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.75);
+}
+body.dark-mode .step-text {
+  color: rgba(255,255,255,0.65);
+}
+body.dark-mode .step-text strong {
+  color: white;
+}
+body.dark-mode .temp-sub {
+  color: #666;
+}
+body.dark-mode .storage-notes p {
+  color: rgba(255,255,255,0.6);
+}
+body.dark-mode .storage-notes p strong {
+  color: white;
+}
+body.dark-mode .pack-label {
+  color: #666;
+}
+body.dark-mode .pack-val {
+  color: white;
+}
+body.dark-mode .serving-note {
+  color: #666;
+}
+body.dark-mode .nutrition-table th {
+  color: #666;
+  border-bottom-color: #444;
+}
+body.dark-mode .nutrition-table td {
+  color: rgba(255,255,255,0.6);
+  border-bottom-color: #2e2e2e;
+}
+body.dark-mode .nutrition-table td:first-child {
+  color: rgba(255,255,255,0.85);
+}
+body.dark-mode .nutrition-table .sub-row td:first-child {
+  color: #777;
+}
+body.dark-mode .nutrition-table .bold-row td {
+  color: white;
+}
+
+/* ========================
    CALC BUTTON
 ======================== */
 #calc-btn {

@@ -103,6 +103,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ========================
+// DARK MODE
+// ========================
+function toggleDarkMode() {
+  const isDark = document.body.classList.toggle('dark-mode');
+  document.getElementById('dark-btn').classList.toggle('active', isDark);
+}
+
+// ========================
 // PRICE CALCULATOR
 // ========================
 function toggleCalc() {
