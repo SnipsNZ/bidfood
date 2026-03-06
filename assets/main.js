@@ -105,11 +105,30 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ========================
-// DARK MODE
+// DARK MODE  (3-state cycle: light → dark → tinted → light)
 // ========================
+let themeState = 0;
+const themeBtn = () => document.getElementById('dark-btn');
+
 function toggleDarkMode() {
-  const isDark = document.body.classList.toggle('dark-mode');
-  document.getElementById('dark-btn').classList.toggle('active', isDark);
+  themeState = (themeState + 1) % 3;
+  document.body.classList.remove('dark-mode', 'tinted-mode', 'dark-ui');
+  const btn = themeBtn();
+  if (themeState === 1) {
+    document.body.classList.add('dark-mode', 'dark-ui');
+    btn.classList.add('active');
+    btn.title = 'Themed dark mode';
+    btn.textContent = '●';
+  } else if (themeState === 2) {
+    document.body.classList.add('tinted-mode', 'dark-ui');
+    btn.classList.add('active');
+    btn.title = 'Light mode';
+    btn.textContent = '◑';
+  } else {
+    btn.classList.remove('active');
+    btn.title = 'Dark mode';
+    btn.textContent = '◑';
+  }
 }
 
 // ========================

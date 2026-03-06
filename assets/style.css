@@ -504,72 +504,77 @@ body.on-product #dark-btn { display: flex; }
 /* ========================
    DARK MODE — product slides
 ======================== */
-body.dark-mode #slide-tonkotsu { background: #1e1400; }
-body.dark-mode #slide-wonton   { background: #091a12; }
-body.dark-mode #slide-dandan   { background: #1e080b; }
-body.dark-mode .product-center {
+/* dark: flat charcoal */
+body.dark-mode #slide-tonkotsu,
+body.dark-mode #slide-wonton,
+body.dark-mode #slide-dandan   { background: #1C1C1E; }
+/* tinted: deep version of each product colour */
+body.tinted-mode #slide-tonkotsu { background: #2d1e00; }
+body.tinted-mode #slide-wonton   { background: #0b2a1a; }
+body.tinted-mode #slide-dandan   { background: #2d0c12; }
+body.dark-ui .product-center {
   border-left-color: #333;
   border-right-color: #333;
 }
-body.dark-mode .product-category {
+body.dark-ui .product-category {
   color: #666;
 }
-body.dark-mode .product-desc {
+body.dark-ui .product-desc {
   color: rgba(255,255,255,0.6);
 }
-body.dark-mode .spec-section-title {
+body.dark-ui .spec-section-title {
   color: #666;
   border-bottom-color: #333;
 }
-body.dark-mode .ingredients-text {
+body.dark-ui .ingredients-text {
   color: rgba(255,255,255,0.65);
 }
-body.dark-mode .ingredients-text strong {
+body.dark-ui .ingredients-text strong {
   color: white;
 }
-body.dark-mode .allergen-tag {
+body.dark-ui .allergen-tag {
   border-color: rgba(255,255,255,0.35);
   color: rgba(255,255,255,0.75);
 }
-body.dark-mode .step-text {
+body.dark-ui .step-text {
   color: rgba(255,255,255,0.65);
 }
-body.dark-mode .step-text strong {
+body.dark-ui .step-text strong {
   color: white;
 }
-body.dark-mode .temp-sub {
+body.dark-ui .temp-sub {
   color: #666;
 }
-body.dark-mode .storage-notes p {
+body.dark-ui .storage-notes p {
   color: rgba(255,255,255,0.6);
 }
-body.dark-mode .storage-notes p strong {
+body.dark-ui .storage-notes p strong {
   color: white;
 }
-body.dark-mode .pack-label {
+body.dark-ui .pack-label {
   color: #666;
 }
-body.dark-mode .pack-val {
+body.dark-ui .pack-val {
   color: white;
 }
-body.dark-mode .serving-note {
+body.dark-ui .serving-note {
   color: #666;
 }
-body.dark-mode .nutrition-table th {
+body.dark-ui .nutrition-table th {
   color: #666;
   border-bottom-color: #444;
 }
-body.dark-mode .nutrition-table td {
+body.dark-ui .nutrition-table td {
   color: rgba(255,255,255,0.6);
   border-bottom-color: #2e2e2e;
 }
-body.dark-mode .nutrition-table td:first-child {
+body.dark-ui .nutrition-table td:first-child {
   color: rgba(255,255,255,0.85);
 }
-body.dark-mode .nutrition-table .sub-row td:first-child {
+body.dark-ui .nutrition-table .sub-row td:first-child {
   color: #777;
 }
-body.dark-mode .nutrition-table .bold-row td {
+body.dark-ui .nutrition-table .bold-row td {
   color: white;
 }
 
