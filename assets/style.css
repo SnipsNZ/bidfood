@@ -179,7 +179,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 110px 0 3vw;
+  padding: 0 155px 0 3vw;
   flex-shrink: 0;
   z-index: 10;
 }
@@ -489,7 +489,7 @@ html, body {
   font-size: 17px;
   width: 36px;
   height: 36px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -497,15 +497,16 @@ html, body {
   border-radius: 4px;
   line-height: 1;
 }
+body.on-product #dark-btn { display: flex; }
 #dark-btn:hover { background: rgba(255,255,255,0.22); }
 #dark-btn.active { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.6); }
 
 /* ========================
    DARK MODE — product slides
 ======================== */
-body.dark-mode .product-slide {
-  background: #1C1C1E;
-}
+body.dark-mode #slide-tonkotsu { background: #1e1400; }
+body.dark-mode #slide-wonton   { background: #091a12; }
+body.dark-mode #slide-dandan   { background: #1e080b; }
 body.dark-mode .product-center {
   border-left-color: #333;
   border-right-color: #333;

@@ -47,6 +47,7 @@ function showTitleSlide() {
   const el = document.getElementById('title-slide');
   el.classList.add('active', 'entering');
   setTimeout(() => el.classList.remove('entering'), 500);
+  document.body.classList.remove('on-product');
   // restart slideshow
   if (autoTimer) clearInterval(autoTimer);
   autoTimer = setInterval(nextTitleSlide, 5000);
@@ -59,6 +60,7 @@ function showProductSlide(n) {
   if (!el) return;
   el.classList.add('active', 'entering');
   setTimeout(() => el.classList.remove('entering'), 500);
+  document.body.classList.add('on-product');
   // pause slideshow while on product pages
   if (autoTimer) clearInterval(autoTimer);
   autoTimer = null;
