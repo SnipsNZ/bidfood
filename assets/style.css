@@ -24,9 +24,6 @@ html, body {
   font-family: 'Barlow', sans-serif;
 }
 
-/* ========================
-   SLIDE SYSTEM
-======================== */
 .slide {
   position: absolute; inset: 0;
   width: 100vw; height: 100vh;
@@ -39,9 +36,7 @@ html, body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ========================
-   TITLE SLIDE
-======================== */
+/* TITLE SLIDE */
 #title-slide {
   background: var(--charcoal);
   flex-direction: row;
@@ -52,7 +47,6 @@ html, body {
   width: 52%;
   position: relative;
   overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
 }
 
 .bowl-img {
@@ -81,15 +75,15 @@ html, body {
 .title-info-panel {
   width: 48%;
   display: flex; flex-direction: column;
-  justify-content: center; align-items: flex-start;
-  padding: 5vh 5vw 5vh 3vw;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 7vh 5vw 7vh 3vw;
   position: relative; z-index: 3;
-  gap: 0;
 }
 
 .title-logo {
   width: clamp(80px, 9vw, 130px);
-  margin-bottom: 4vh;
+  margin-bottom: 3vh;
   filter: invert(1);
 }
 
@@ -99,15 +93,14 @@ html, body {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--mid-grey);
-  margin-bottom: 1.5vh;
+  margin-bottom: 2.5vh;
 }
 
 .product-names-container {
   position: relative;
   width: 100%;
-  height: 22vh;
-  margin-bottom: 2vh;
-  overflow: visible;
+  height: 32vh;
+  flex-shrink: 0;
 }
 
 .product-name-item {
@@ -124,47 +117,35 @@ html, body {
 .product-name-item h1 {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
   font-size: clamp(32px, 5.2vw, 85px);
+  font-weight: 700;
   line-height: 0.95;
-  margin-bottom: 1.2vh;
+  margin-bottom: 1.8vh;
   letter-spacing: -0.01em;
 }
 
 .product-name-item .product-tagline {
-  font-size: clamp(10px, 0.95vw, 15px);
+  font-size: clamp(11px, 1vw, 16px);
   color: rgba(255,255,255,0.75);
   font-weight: 300;
   max-width: 26vw;
   line-height: 1.55;
 }
 
-.title-accent-bar {
-  display: none;
-}
+.title-nav { display: none; }
+.title-accent-bar { display: none; }
 
-.title-nav {
-  display: flex; gap: 10px; align-items: center;
-  margin-top: 2vh;
-}
-
-.nav-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: rgba(255,255,255,0.25);
-  cursor: pointer; transition: all 0.3s ease;
-  border: none;
-}
-.nav-dot.active { background: white; transform: scale(1.3); }
+.title-spacer { flex: 1; }
 
 .title-slide-btns {
-  margin-top: 4vh;
-  display: flex; gap: 12px; flex-wrap: wrap;
+  display: flex; gap: 12px;
 }
 
 .view-btn {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(9px, 0.75vw, 12px);
+  font-size: clamp(9px, 0.8vw, 13px);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 1.2vh 1.8vw;
+  padding: 1.4vh 2vw;
   border: 2px solid rgba(255,255,255,0.3);
   color: white; background: transparent;
   cursor: pointer; transition: all 0.3s ease;
@@ -176,22 +157,12 @@ html, body {
 }
 .view-btn.primary:hover { background: rgba(255,255,255,0.85); }
 
-.title-bottom-bar {
-  position: absolute; bottom: 0; left: 52%; right: 0;
-  height: 4px;
-  transition: background 0.6s ease;
-  z-index: 5;
-}
-
-/* ========================
-   PRODUCT DETAIL SLIDES
-======================== */
+/* PRODUCT SLIDES */
 .product-slide {
   flex-direction: column;
   background: var(--cream);
 }
 
-/* NAV BAR */
 .slide-nav-bar {
   height: 7vh;
   background: var(--charcoal);
@@ -208,13 +179,11 @@ html, body {
   flex-shrink: 0;
 }
 
-.nav-tabs {
-  display: flex; gap: 0;
-}
+.nav-tabs { display: flex; }
 
 .nav-tab {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(8px, 0.72vw, 12px);
+  font-size: clamp(9px, 0.8vw, 13px);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 0 1.3vw;
@@ -230,7 +199,7 @@ html, body {
 
 .nav-home {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(8px, 0.68vw, 11px);
+  font-size: clamp(8px, 0.7vw, 12px);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   padding: 0.8vh 1vw;
@@ -249,20 +218,21 @@ html, body {
   overflow: hidden;
 }
 
-/* LEFT COLUMN */
+/* LEFT: product title + bowl */
 .product-left {
-  width: 38%;
+  width: 32%;
   display: flex; flex-direction: column;
-  padding: 3vh 2vw 2vh 3vw;
+  padding: 3vh 2vw 0 3vw;
   gap: 1.5vh;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .product-header-block { flex-shrink: 0; }
 
 .product-category {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(7px, 0.65vw, 11px);
+  font-size: clamp(8px, 0.7vw, 12px);
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--mid-grey);
@@ -271,23 +241,22 @@ html, body {
 
 .product-title {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(28px, 4.8vw, 80px);
+  font-size: clamp(30px, 4.5vw, 76px);
+  font-weight: 700;
   line-height: 0.93;
-  color: var(--charcoal);
   margin-bottom: 1.2vh;
   letter-spacing: -0.01em;
 }
 
 .product-color-bar {
   width: 50px; height: 4px;
-  margin-bottom: 1.5vh;
+  margin-bottom: 1.2vh;
 }
 
 .product-desc {
-  font-size: clamp(10px, 0.85vw, 14px);
+  font-size: clamp(11px, 1vw, 16px);
   color: #444;
   line-height: 1.55;
-  max-width: 28vw;
   font-style: italic;
 }
 
@@ -299,52 +268,64 @@ html, body {
   width: 100%;
 }
 
-/* CENTER COLUMN */
+/* CENTER: all text content + box image */
 .product-center {
-  width: 32%;
-  padding: 3vh 1.5vw;
+  flex: 1;
+  padding: 3vh 2.5vw;
   display: flex; flex-direction: column; gap: 2vh;
   overflow-y: auto;
   border-left: 1px solid var(--border);
-  border-right: 1px solid var(--border);
 }
 
 .product-center::-webkit-scrollbar { width: 3px; }
 .product-center::-webkit-scrollbar-thumb { background: var(--border); }
 
+/* RIGHT: nutrition */
+.product-right {
+  width: 26%;
+  padding: 3vh 2.5vw 2vh 2vw;
+  display: flex; flex-direction: column; gap: 2vh;
+  overflow-y: auto;
+  border-left: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.product-right::-webkit-scrollbar { width: 3px; }
+.product-right::-webkit-scrollbar-thumb { background: var(--border); }
+
+/* SPEC TEXT */
 .spec-section {}
 
 .spec-section-title {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(7px, 0.6vw, 10px);
+  font-size: clamp(8px, 0.7vw, 12px);
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--mid-grey);
-  margin-bottom: 0.9vh;
+  margin-bottom: 0.8vh;
   padding-bottom: 0.5vh;
   border-bottom: 1px solid var(--border);
 }
 
-.spec-codes { display: flex; gap: 2vw; }
+.spec-codes { display: flex; gap: 3vw; }
 .spec-code-label {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(7px, 0.58vw, 10px);
+  font-size: clamp(8px, 0.7vw, 12px);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--mid-grey);
 }
 .spec-code-value {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(14px, 1.5vw, 26px);
+  font-size: clamp(16px, 1.8vw, 28px);
   color: var(--charcoal);
   line-height: 1.1;
-  letter-spacing: 0.02em;
 }
 
 .ingredients-text {
-  font-size: clamp(9px, 0.68vw, 11px);
+  font-size: clamp(11px, 1vw, 16px);
   color: #444;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 .ingredients-text strong {
   text-transform: uppercase;
@@ -352,67 +333,62 @@ html, body {
   color: var(--charcoal);
 }
 
-.allergen-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.allergen-tags { display: flex; flex-wrap: wrap; gap: 7px; }
 .allergen-tag {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(7px, 0.58vw, 10px);
-  letter-spacing: 0.12em;
+  font-size: clamp(9px, 0.75vw, 13px);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.4vh 0.6vw;
+  padding: 0.5vh 0.8vw;
   border: 1.5px solid var(--charcoal);
   color: var(--charcoal);
 }
 
-.cooking-steps { display: flex; flex-direction: column; gap: 0.7vh; }
-.cooking-step { display: flex; gap: 0.7vw; align-items: flex-start; }
+.cooking-steps { display: flex; flex-direction: column; gap: 0.8vh; }
+.cooking-step { display: flex; gap: 0.8vw; align-items: flex-start; }
 .step-num {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(12px, 1.2vw, 20px);
-  line-height: 1;
+  font-size: clamp(14px, 1.4vw, 22px);
+  line-height: 1.1;
   flex-shrink: 0;
-  width: 1.5vw;
-  min-width: 18px;
+  min-width: 1.6vw;
 }
 .step-text {
-  font-size: clamp(9px, 0.68vw, 11px);
+  font-size: clamp(11px, 1vw, 16px);
   color: #444;
   line-height: 1.55;
-  padding-top: 0.15em;
 }
 .step-text strong { color: var(--charcoal); }
 
-/* RIGHT COLUMN */
-.product-right {
-  width: 30%;
-  padding: 3vh 2.5vw 3vh 1.5vw;
-  display: flex; flex-direction: column; gap: 2vh;
-  overflow-y: auto;
+/* BOX IMAGE — transparent background */
+.box-img {
+  width: 100%;
+  object-fit: contain;
+  background: transparent;
+  display: block;
 }
 
-.product-right::-webkit-scrollbar { width: 3px; }
-.product-right::-webkit-scrollbar-thumb { background: var(--border); }
-
-/* NUTRITION TABLE */
+/* NUTRITION */
 .nutrition-table {
   width: 100%;
   border-collapse: collapse;
 }
 .nutrition-table th {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(7px, 0.58vw, 10px);
+  font-size: clamp(8px, 0.7vw, 12px);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--mid-grey);
   text-align: right;
-  padding: 0.4vh 0;
+  padding: 0.5vh 0;
   border-bottom: 2px solid var(--charcoal);
 }
 .nutrition-table th:first-child { text-align: left; }
 .nutrition-table td {
-  font-size: clamp(9px, 0.68vw, 11px);
+  font-size: clamp(10px, 0.9vw, 15px);
   color: #444;
   text-align: right;
-  padding: 0.4vh 0;
+  padding: 0.45vh 0;
   border-bottom: 1px solid var(--border);
 }
 .nutrition-table td:first-child { text-align: left; color: var(--charcoal); }
@@ -421,59 +397,49 @@ html, body {
 
 .serving-note {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(7px, 0.58vw, 10px);
+  font-size: clamp(8px, 0.7vw, 12px);
   color: var(--mid-grey);
   margin-bottom: 0.5vh;
-  letter-spacing: 0.05em;
 }
 
-.storage-info { display: flex; align-items: flex-start; gap: 1vw; }
+.storage-info { display: flex; align-items: flex-start; gap: 1.2vw; }
 .storage-temp { flex-shrink: 0; text-align: center; }
 .temp-val {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(20px, 2.5vw, 42px);
+  font-size: clamp(22px, 2.8vw, 46px);
   line-height: 1;
   letter-spacing: -0.02em;
 }
 .temp-sub {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(6px, 0.55vw, 9px);
+  font-size: clamp(7px, 0.6vw, 10px);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--mid-grey);
 }
 .storage-notes p {
-  font-size: clamp(9px, 0.68vw, 11px);
+  font-size: clamp(10px, 0.9vw, 15px);
   color: #555;
   line-height: 1.55;
-  margin-bottom: 0.2vh;
+  margin-bottom: 0.25vh;
 }
 .storage-notes p strong { color: var(--charcoal); }
 
-.box-img {
-  width: 100%;
-  object-fit: contain;
-  border: 1px solid var(--border);
-  background: white;
-}
-
-.packaging-row { display: flex; gap: 1.5vw; }
+.packaging-row { display: flex; gap: 2vw; }
 .pack-label {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(6px, 0.58vw, 10px);
+  font-size: clamp(7px, 0.65vw, 11px);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--mid-grey);
 }
 .pack-val {
   font-family: 'Gotham', 'Barlow Condensed', sans-serif;
-  font-size: clamp(12px, 1.2vw, 20px);
+  font-size: clamp(14px, 1.4vw, 22px);
   color: var(--charcoal);
   line-height: 1.1;
-  letter-spacing: 0.02em;
 }
 
-/* BOTTOM ACCENT BAR */
 .slide-bottom-bar {
   height: 4px;
   flex-shrink: 0;
