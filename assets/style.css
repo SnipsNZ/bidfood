@@ -535,22 +535,22 @@ body.dark-mode #slide-tonkotsu,
 body.dark-mode #slide-wonton,
 body.dark-mode #slide-dandan   { background: #1C1C1E; }
 /* tinted: deep version of each product colour */
-body.tinted-mode #slide-tonkotsu { background: #2d1e00; }
-body.tinted-mode #slide-wonton   { background: #0b2a1a; }
-body.tinted-mode #slide-dandan   { background: #2d0c12; }
+body.tinted-mode #slide-tonkotsu { background: #4a3200; }
+body.tinted-mode #slide-wonton   { background: #0f3d26; }
+body.tinted-mode #slide-dandan   { background: #42101a; }
 body.dark-ui .product-center {
-  border-left-color: #333;
-  border-right-color: #333;
+  border-left-color: #444;
+  border-right-color: #444;
 }
 body.dark-ui .product-category {
-  color: #666;
+  color: #999;
 }
 body.dark-ui .product-desc {
   color: rgba(255,255,255,0.6);
 }
 body.dark-ui .spec-section-title {
-  color: #666;
-  border-bottom-color: #333;
+  color: #999;
+  border-bottom-color: #444;
 }
 body.dark-ui .ingredients-text {
   color: rgba(255,255,255,0.65);
@@ -569,7 +569,7 @@ body.dark-ui .step-text strong {
   color: white;
 }
 body.dark-ui .temp-sub {
-  color: #666;
+  color: #999;
 }
 body.dark-ui .storage-notes p {
   color: rgba(255,255,255,0.6);
@@ -578,17 +578,17 @@ body.dark-ui .storage-notes p strong {
   color: white;
 }
 body.dark-ui .pack-label {
-  color: #666;
+  color: #999;
 }
 body.dark-ui .pack-val {
   color: white;
 }
 body.dark-ui .serving-note {
-  color: #666;
+  color: #999;
 }
 body.dark-ui .nutrition-table th {
-  color: #666;
-  border-bottom-color: #444;
+  color: #999;
+  border-bottom-color: #555;
 }
 body.dark-ui .nutrition-table td {
   color: rgba(255,255,255,0.6);
@@ -598,7 +598,7 @@ body.dark-ui .nutrition-table td:first-child {
   color: rgba(255,255,255,0.85);
 }
 body.dark-ui .nutrition-table .sub-row td:first-child {
-  color: #777;
+  color: #999;
 }
 body.dark-ui .nutrition-table .bold-row td {
   color: white;

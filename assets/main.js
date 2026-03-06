@@ -107,6 +107,7 @@ document.addEventListener('keydown', e => {
 // INIT
 // ========================
 document.addEventListener('DOMContentLoaded', () => {
+  applyTheme();
   // wire up the view products button properly
   document.getElementById('view-products-btn').addEventListener('click', () => {
     showProductSlide(currentTitleSlide + 1);
@@ -145,30 +146,34 @@ function pauseProductPlay() {
 }
 
 // ========================
-// DARK MODE  (3-state cycle: light → dark → tinted → light)
+// DARK MODE  (3-state cycle: tinted → light → dark → tinted)
 // ========================
-let themeState = 0;
+let themeState = 2; // default: tinted
 const themeBtn = () => document.getElementById('dark-btn');
 
-function toggleDarkMode() {
-  themeState = (themeState + 1) % 3;
+function applyTheme() {
   document.body.classList.remove('dark-mode', 'tinted-mode', 'dark-ui');
   const btn = themeBtn();
   if (themeState === 1) {
-    document.body.classList.add('dark-mode', 'dark-ui');
-    btn.classList.add('active');
-    btn.title = 'Themed dark mode';
-    btn.textContent = '●';
+    btn.classList.remove('active');
+    btn.title = 'Dark mode';
+    btn.textContent = '◑';
   } else if (themeState === 2) {
     document.body.classList.add('tinted-mode', 'dark-ui');
     btn.classList.add('active');
     btn.title = 'Light mode';
     btn.textContent = '◑';
   } else {
-    btn.classList.remove('active');
-    btn.title = 'Dark mode';
-    btn.textContent = '◑';
+    document.body.classList.add('dark-mode', 'dark-ui');
+    btn.classList.add('active');
+    btn.title = 'Themed dark mode';
+    btn.textContent = '●';
   }
+}
+
+function toggleDarkMode() {
+  themeState = (themeState + 1) % 3;
+  applyTheme();
 }
 
 // ========================
