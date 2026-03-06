@@ -129,7 +129,7 @@ html, body {
 }
 
 .product-name-item .product-tagline {
-  font-size: clamp(11px, 1vw, 16px);
+  font-size: clamp(12px, 1.15vw, 17px);
   color: rgba(255,255,255,0.72);
   font-weight: 300;
   max-width: 26vw;
@@ -274,7 +274,7 @@ html, body {
 }
 
 .product-desc {
-  font-size: clamp(10px, 0.9vw, 14px);
+  font-size: clamp(12px, 1.05vw, 16px);
   color: #444;
   line-height: 1.55;
   font-style: italic;
@@ -310,18 +310,25 @@ html, body {
   width: 28%;
   flex-shrink: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   padding: 2vh 2vw;
-  overflow: hidden;
+  overflow-y: auto;
+  gap: 1.5vh;
 }
+.product-right::-webkit-scrollbar { width: 3px; }
+.product-right::-webkit-scrollbar-thumb { background: var(--border); }
 
 .box-img {
   width: 100%;
-  height: 100%;
+  flex: 1;
+  min-height: 0;
   object-fit: contain;
   background: transparent;
   display: block;
+}
+
+.nutrition-section {
+  flex-shrink: 0;
 }
 
 /* ========================
@@ -331,7 +338,7 @@ html, body {
 
 .spec-section-title {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(7px, 0.65vw, 11px);
+  font-size: clamp(8px, 0.75vw, 12px);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--mid-grey);
@@ -356,7 +363,7 @@ html, body {
 }
 
 .ingredients-text {
-  font-size: clamp(11px, 1vw, 15px);
+  font-size: clamp(12px, 1.15vw, 17px);
   color: #444;
   line-height: 1.65;
 }
@@ -369,7 +376,7 @@ html, body {
 .allergen-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .allergen-tag {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(8px, 0.72vw, 12px);
+  font-size: clamp(10px, 0.85vw, 14px);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0.45vh 0.7vw;
@@ -387,7 +394,7 @@ html, body {
   min-width: 1.4vw;
 }
 .step-text {
-  font-size: clamp(11px, 1vw, 15px);
+  font-size: clamp(12px, 1.15vw, 17px);
   color: #444;
   line-height: 1.5;
 }
@@ -409,7 +416,7 @@ html, body {
   color: var(--mid-grey);
 }
 .storage-notes p {
-  font-size: clamp(11px, 1vw, 15px);
+  font-size: clamp(12px, 1.15vw, 17px);
   color: #555;
   line-height: 1.5;
   margin-bottom: 0.2vh;
@@ -426,7 +433,7 @@ html, body {
 }
 .pack-val {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(13px, 1.3vw, 20px);
+  font-size: clamp(14px, 1.45vw, 22px);
   color: var(--charcoal);
   line-height: 1.1;
 }
@@ -434,7 +441,7 @@ html, body {
 /* NUTRITION TABLE */
 .serving-note {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(7px, 0.65vw, 11px);
+  font-size: clamp(9px, 0.78vw, 13px);
   color: var(--mid-grey);
   margin-bottom: 0.5vh;
 }
@@ -442,7 +449,7 @@ html, body {
 .nutrition-table { width: 100%; border-collapse: collapse; }
 .nutrition-table th {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(7px, 0.65vw, 11px);
+  font-size: clamp(9px, 0.78vw, 13px);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--mid-grey);
@@ -452,7 +459,7 @@ html, body {
 }
 .nutrition-table th:first-child { text-align: left; }
 .nutrition-table td {
-  font-size: clamp(10px, 0.9vw, 14px);
+  font-size: clamp(12px, 1.05vw, 16px);
   color: #444;
   text-align: right;
   padding: 0.4vh 0;
