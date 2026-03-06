@@ -252,7 +252,7 @@ html, body {
 
 .product-category {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(8px, 0.68vw, 11px);
+  font-size: clamp(12px, 1.02vw, 17px);
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--mid-grey);
@@ -261,7 +261,7 @@ html, body {
 
 .product-title {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(28px, 4.2vw, 72px);
+  font-size: clamp(42px, 6.3vw, 108px);
   font-weight: 700;
   line-height: 0.93;
   letter-spacing: -0.01em;
@@ -274,7 +274,7 @@ html, body {
 }
 
 .product-desc {
-  font-size: clamp(12px, 1.05vw, 16px);
+  font-size: clamp(18px, 1.58vw, 24px);
   color: #444;
   line-height: 1.55;
   font-style: italic;
@@ -320,9 +320,10 @@ html, body {
 
 .box-img {
   width: 100%;
-  flex: 1;
-  min-height: 0;
+  flex-shrink: 0;
+  max-height: 42%;
   object-fit: contain;
+  object-position: top center;
   background: transparent;
   display: block;
 }
@@ -338,7 +339,7 @@ html, body {
 
 .spec-section-title {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(8px, 0.75vw, 12px);
+  font-size: clamp(12px, 1.13vw, 18px);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--mid-grey);
@@ -363,7 +364,7 @@ html, body {
 }
 
 .ingredients-text {
-  font-size: clamp(12px, 1.15vw, 17px);
+  font-size: clamp(18px, 1.73vw, 26px);
   color: #444;
   line-height: 1.65;
 }
@@ -376,7 +377,7 @@ html, body {
 .allergen-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .allergen-tag {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(10px, 0.85vw, 14px);
+  font-size: clamp(15px, 1.28vw, 21px);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0.45vh 0.7vw;
@@ -388,13 +389,13 @@ html, body {
 .cooking-step { display: flex; gap: 0.7vw; align-items: baseline; }
 .step-num {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(13px, 1.3vw, 20px);
+  font-size: clamp(20px, 1.95vw, 30px);
   line-height: 1;
   flex-shrink: 0;
   min-width: 1.4vw;
 }
 .step-text {
-  font-size: clamp(12px, 1.15vw, 17px);
+  font-size: clamp(18px, 1.73vw, 26px);
   color: #444;
   line-height: 1.5;
 }
@@ -404,19 +405,19 @@ html, body {
 .storage-temp { flex-shrink: 0; }
 .temp-val {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(20px, 2.6vw, 42px);
+  font-size: clamp(30px, 3.9vw, 63px);
   line-height: 1;
   letter-spacing: -0.02em;
 }
 .temp-sub {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(6px, 0.58vw, 9px);
+  font-size: clamp(9px, 0.87vw, 14px);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--mid-grey);
 }
 .storage-notes p {
-  font-size: clamp(12px, 1.15vw, 17px);
+  font-size: clamp(18px, 1.73vw, 26px);
   color: #555;
   line-height: 1.5;
   margin-bottom: 0.2vh;
@@ -426,14 +427,14 @@ html, body {
 .packaging-row { display: flex; gap: 2.5vw; }
 .pack-label {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(7px, 0.62vw, 10px);
+  font-size: clamp(11px, 0.93vw, 15px);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--mid-grey);
 }
 .pack-val {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(14px, 1.45vw, 22px);
+  font-size: clamp(21px, 2.18vw, 33px);
   color: var(--charcoal);
   line-height: 1.1;
 }
@@ -441,7 +442,7 @@ html, body {
 /* NUTRITION TABLE */
 .serving-note {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(9px, 0.78vw, 13px);
+  font-size: clamp(14px, 1.17vw, 20px);
   color: var(--mid-grey);
   margin-bottom: 0.5vh;
 }
@@ -449,7 +450,7 @@ html, body {
 .nutrition-table { width: 100%; border-collapse: collapse; }
 .nutrition-table th {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(9px, 0.78vw, 13px);
+  font-size: clamp(14px, 1.17vw, 20px);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--mid-grey);
@@ -459,7 +460,7 @@ html, body {
 }
 .nutrition-table th:first-child { text-align: left; }
 .nutrition-table td {
-  font-size: clamp(12px, 1.05vw, 16px);
+  font-size: clamp(18px, 1.58vw, 24px);
   color: #444;
   text-align: right;
   padding: 0.4vh 0;
