@@ -97,3 +97,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   autoTimer = setInterval(nextTitleSlide, 5000);
 });
+
+// ========================
+// FULLSCREEN
+// ========================
+function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+// Update button icon when fullscreen state changes
+document.addEventListener('fullscreenchange', () => {
+  const btn = document.getElementById('fullscreen-btn');
+  btn.textContent = document.fullscreenElement ? '✕' : '⛶';
+  btn.title = document.fullscreenElement ? 'Exit fullscreen' : 'Toggle fullscreen';
+});
