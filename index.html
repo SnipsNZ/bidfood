@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>United Food Co – Asian Kitchen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ========================
+     TITLE / OVERVIEW SLIDE
+======================== -->
+<div class="slide active" id="title-slide">
+
+  <div class="title-bowl-panel">
+    <img class="bowl-img visible" id="bowl0" src="assets/images/tonkotsubowl.png" alt="Vegetable Tonkotsu">
+    <img class="bowl-img"         id="bowl1" src="assets/images/wontonbowl.png"   alt="Prawn Wonton">
+    <img class="bowl-img"         id="bowl2" src="assets/images/dandanbowl.png"   alt="Dan Dan Noodles">
+    <div class="bowl-gradient"></div>
+  </div>
+
+  <div class="title-info-panel">
+    <img class="title-logo" src="assets/images/logo_white.png" alt="United Food Co">
+    <div class="title-label">Asian Kitchen — Product Range</div>
+
+    <div class="product-names-container">
+      <div class="product-name-item active" id="name0">
+        <h1>VEGETABLE<br>TONKOTSU<br>NOODLE RAMEN</h1>
+        <p class="product-tagline">Tender noodles in a rich vegetable broth, layered with umami depth and topped with vibrant vegetables.</p>
+      </div>
+      <div class="product-name-item" id="name1">
+        <h1>PRAWN<br>WONTON<br>NOODLE SOUP</h1>
+        <p class="product-tagline">A comforting classic with juicy prawn wontons, springy noodles and a savoury broth.</p>
+      </div>
+      <div class="product-name-item" id="name2">
+        <h1>DAN DAN<br>NOODLES</h1>
+        <p class="product-tagline">Savoury noodles in a rich, sichuan sauce with vegetables and mild chilli.</p>
+      </div>
+    </div>
+
+    <div class="title-accent-bar" id="accentBar" style="background: var(--tonkotsu)"></div>
+
+    <div class="title-nav">
+      <button class="nav-dot active" id="dot0" onclick="goToTitleSlide(0)" aria-label="Slide 1"></button>
+      <button class="nav-dot"        id="dot1" onclick="goToTitleSlide(1)" aria-label="Slide 2"></button>
+      <button class="nav-dot"        id="dot2" onclick="goToTitleSlide(2)" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="title-slide-btns">
+      <button class="view-btn primary" onclick="showProductSlide(1)">View Products ↓</button>
+    </div>
+  </div>
+
+  <div class="title-bottom-bar" id="titleBottomBar" style="background: var(--tonkotsu)"></div>
+</div>
+
+
+<!-- ========================
+     VEGETABLE TONKOTSU
+======================== -->
+<div class="slide product-slide" id="slide-tonkotsu">
+
+  <nav class="slide-nav-bar">
+    <img class="nav-logo" src="assets/images/logo_white.png" alt="United Food Co">
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="showProductSlide(1)" style="border-bottom-color: var(--tonkotsu)">Vegetable Tonkotsu</button>
+      <button class="nav-tab"        onclick="showProductSlide(2)">Prawn Wonton</button>
+      <button class="nav-tab"        onclick="showProductSlide(3)">Dan Dan Noodles</button>
+    </div>
+    <button class="nav-home" onclick="showTitleSlide()">← Overview</button>
+  </nav>
+
+  <div class="product-body">
+
+    <!-- LEFT -->
+    <div class="product-left">
+      <div class="product-header-block">
+        <div class="product-category">Asian Kitchen</div>
+        <div class="product-title" style="color: var(--tonkotsu)">VEGETABLE<br>TONKOTSU<br>NOODLE<br>RAMEN</div>
+        <div class="product-color-bar" style="background: var(--tonkotsu)"></div>
+        <p class="product-desc">Tender noodles in a rich vegetable broth, layered with umami depth and topped with vibrant vegetables for a warming, satisfying ramen experience.</p>
+      </div>
+      <img class="product-bowl-img" src="assets/images/tonkotsubowl.png" alt="Vegetable Tonkotsu bowl">
+    </div>
+
+    <!-- CENTER -->
+    <div class="product-center">
+
+      <div class="spec-section">
+        <div class="spec-section-title">Product Codes</div>
+        <div class="spec-codes">
+          <div>
+            <div class="spec-code-label">Item No.</div>
+            <div class="spec-code-value">ORNSPVE20</div>
+          </div>
+          <div>
+            <div class="spec-code-label">Short Code</div>
+            <div class="spec-code-value" style="color: var(--tonkotsu)">9270</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Ingredients</div>
+        <p class="ingredients-text"><strong>Soy</strong> Milk [water, soybean], Ramen Noodles (26%) [<strong>wheat</strong> flour, water, raising agent (500), colour (160a)], Vegetables (18%) [spinach, cabbage, shiitake mushroom, carrot, ear mushroom, spring onion], Konbu [water, kelp], <strong>Soy</strong> Sauce [soybean, <strong>wheat</strong>, salt, alcohol, water], Refined <strong>Soybean</strong> Oil, <strong>Sesame</strong> Butter, Garlic, Salt, Ginger, Sugar, Yeast Extract.</p>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Allergens</div>
+        <div class="allergen-tags">
+          <span class="allergen-tag">Wheat</span>
+          <span class="allergen-tag">Gluten</span>
+          <span class="allergen-tag">Soy</span>
+          <span class="allergen-tag">Sesame</span>
+        </div>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Cooking Instructions — From Frozen</div>
+        <div class="cooking-steps">
+          <div class="cooking-step">
+            <div class="step-num" style="color: var(--tonkotsu)">1</div>
+            <div class="step-text">Remove product from packaging and place in a microwave safe dish.</div>
+          </div>
+          <div class="cooking-step">
+            <div class="step-num" style="color: var(--tonkotsu)">2</div>
+            <div class="step-text">Cover with a lid and heat on high (1000W) for <strong>6–7 minutes</strong>.</div>
+          </div>
+          <div class="cooking-step">
+            <div class="step-num" style="color: var(--tonkotsu)">3</div>
+            <div class="step-text">Ensure product is cooked through before consumption.</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /product-center -->
+
+    <!-- RIGHT -->
+    <div class="product-right">
+
+      <div class="spec-section">
+        <div class="spec-section-title">Nutrition Information</div>
+        <p class="serving-note">Serving Size: 308g &nbsp;|&nbsp; Servings per pack: 20</p>
+        <table class="nutrition-table">
+          <thead>
+            <tr><th>Nutrient</th><th>Per Serving</th><th>Per 100g</th></tr>
+          </thead>
+          <tbody>
+            <tr class="bold-row"><td>Energy</td><td>1950kJ</td><td>631kJ</td></tr>
+            <tr class="bold-row"><td>Protein</td><td>19.2g</td><td>6.2g</td></tr>
+            <tr class="bold-row"><td>Fat, Total</td><td>11.0g</td><td>3.6g</td></tr>
+            <tr class="sub-row"><td>– Saturated</td><td>1.5g</td><td>0.5g</td></tr>
+            <tr class="bold-row"><td>Carbohydrate</td><td>67.7g</td><td>22.0g</td></tr>
+            <tr class="sub-row"><td>– Sugars</td><td>5.0g</td><td>1.6g</td></tr>
+            <tr class="bold-row"><td>Sodium</td><td>1570mg</td><td>509mg</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Storage</div>
+        <div class="storage-info">
+          <div class="storage-temp">
+            <div class="temp-val" style="color: var(--tonkotsu)">−18°C</div>
+            <div class="temp-sub">Keep Frozen</div>
+          </div>
+          <div class="storage-notes">
+            <p>Store at or below −18°C.</p>
+            <p>Do not refreeze once thawed.</p>
+            <p>Shelf life: <strong>24 months</strong></p>
+            <p>Product of Vietnam.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Packaging</div>
+        <div class="packaging-row">
+          <div><div class="pack-label">Size</div><div class="pack-val">308g</div></div>
+          <div><div class="pack-label">Outer</div><div class="pack-val">20 × 308g</div></div>
+          <div><div class="pack-label">Pallet</div><div class="pack-val">48 ctns</div></div>
+        </div>
+      </div>
+
+      <img class="box-img" src="assets/images/tonkotsubox.png" alt="Vegetable Tonkotsu box">
+
+    </div><!-- /product-right -->
+
+  </div><!-- /product-body -->
+  <div class="slide-bottom-bar" style="background: var(--tonkotsu)"></div>
+</div>
+
+
+<!-- ========================
+     PRAWN WONTON NOODLE SOUP
+======================== -->
+<div class="slide product-slide" id="slide-wonton">
+
+  <nav class="slide-nav-bar">
+    <img class="nav-logo" src="assets/images/logo_white.png" alt="United Food Co">
+    <div class="nav-tabs">
+      <button class="nav-tab"        onclick="showProductSlide(1)">Vegetable Tonkotsu</button>
+      <button class="nav-tab active" onclick="showProductSlide(2)" style="border-bottom-color: var(--wonton)">Prawn Wonton</button>
+      <button class="nav-tab"        onclick="showProductSlide(3)">Dan Dan Noodles</button>
+    </div>
+    <button class="nav-home" onclick="showTitleSlide()">← Overview</button>
+  </nav>
+
+  <div class="product-body">
+
+    <div class="product-left">
+      <div class="product-header-block">
+        <div class="product-category">Asian Kitchen</div>
+        <div class="product-title" style="color: var(--wonton)">PRAWN<br>WONTON<br>NOODLE<br>SOUP</div>
+        <div class="product-color-bar" style="background: var(--wonton)"></div>
+        <p class="product-desc">A comforting classic with juicy prawn wontons, springy noodles and a savoury broth.</p>
+      </div>
+      <img class="product-bowl-img" src="assets/images/wontonbowl.png" alt="Prawn Wonton Noodle Soup bowl">
+    </div>
+
+    <div class="product-center">
+
+      <div class="spec-section">
+        <div class="spec-section-title">Product Codes</div>
+        <div class="spec-codes">
+          <div>
+            <div class="spec-code-label">Item No.</div>
+            <div class="spec-code-value">ORNSPPW20</div>
+          </div>
+          <div>
+            <div class="spec-code-label">Short Code</div>
+            <div class="spec-code-value" style="color: var(--wonton)">9274</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Ingredients</div>
+        <p class="ingredients-text">Noodles (32%) [<strong>wheat</strong> flour, water, <strong>egg</strong> white powder, refined <strong>soybean</strong> oil, salt, raising agent (500), acidity regulator (501), emulsifier (451), colour (160a)], Wonton (32%) [prawn (12%) (Penaeus vannamei)(<strong>crustacean</strong>) (contains salt, acidity regulators (331, 500)), <strong>wheat</strong> flour, water, bamboo shoot, refined <strong>soybean</strong> oil, tapioca starch, sugar, <strong>sesame</strong> oil, salt, yeast extract, pepper, turmeric], Water, Bok Choy, Chives, Shallot, Salt, Tapioca Starch, Sugar, Yeast Extract, Refined <strong>Soybean</strong> Oil, <strong>Sesame</strong> Oil, Pepper.</p>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Allergens</div>
+        <div class="allergen-tags">
+          <span class="allergen-tag">Crustacean</span>
+          <span class="allergen-tag">Wheat</span>
+          <span class="allergen-tag">Gluten</span>
+          <span class="allergen-tag">Soy</span>
+          <span class="allergen-tag">Sesame</span>
+          <span class="allergen-tag">Egg</span>
+        </div>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Cooking Instructions — From Frozen</div>
+        <div class="cooking-steps">
+          <div class="cooking-step">
+            <div class="step-num" style="color: var(--wonton)">1</div>
+            <div class="step-text">Remove product from packaging and place in a microwave safe dish.</div>
+          </div>
+          <div class="cooking-step">
+            <div class="step-num" style="color: var(--wonton)">2</div>
+            <div class="step-text">Add <strong>160g hot water</strong> and cover with a lid.</div>
+          </div>
+          <div class="cooking-step">
+            <div class="step-num" style="color: var(--wonton)">3</div>
+            <div class="step-text">Heat on high (1000W) for <strong>4.5–5 minutes</strong>.</div>
+          </div>
+          <div class="cooking-step">
+            <div class="step-num" style="color: var(--wonton)">4</div>
+            <div class="step-text">Ensure product is cooked through before consumption.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="product-right">
+
+      <div class="spec-section">
+        <div class="spec-section-title">Nutrition Information</div>
+        <p class="serving-note">Serving Size: 308g &nbsp;|&nbsp; Servings per pack: 20</p>
+        <table class="nutrition-table">
+          <thead>
+            <tr><th>Nutrient</th><th>Per Serving</th><th>Per 100g</th></tr>
+          </thead>
+          <tbody>
+            <tr class="bold-row"><td>Energy</td><td>2210kJ</td><td>718kJ</td></tr>
+            <tr class="bold-row"><td>Protein</td><td>20.7g</td><td>6.7g</td></tr>
+            <tr class="bold-row"><td>Fat, Total</td><td>10.8g</td><td>3.5g</td></tr>
+            <tr class="sub-row"><td>– Saturated</td><td>1.6g</td><td>0.5g</td></tr>
+            <tr class="bold-row"><td>Carbohydrate</td><td>84.5g</td><td>27.4g</td></tr>
+            <tr class="sub-row"><td>– Sugars</td><td>6.4g</td><td>2.1g</td></tr>
+            <tr class="bold-row"><td>Sodium</td><td>2160mg</td><td>700mg</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Storage</div>
+        <div class="storage-info">
+          <div class="storage-temp">
+            <div class="temp-val" style="color: var(--wonton)">−18°C</div>
+            <div class="temp-sub">Keep Frozen</div>
+          </div>
+          <div class="storage-notes">
+            <p>Store at or below −18°C.</p>
+            <p>Do not refreeze once thawed.</p>
+            <p>Shelf life: <strong>24 months</strong></p>
+            <p>Product of Vietnam.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Packaging</div>
+        <div class="packaging-row">
+          <div><div class="pack-label">Size</div><div class="pack-val">308g</div></div>
+          <div><div class="pack-label">Outer</div><div class="pack-val">20 × 308g</div></div>
+          <div><div class="pack-label">Pallet</div><div class="pack-val">48 ctns</div></div>
+        </div>
+      </div>
+
+      <img class="box-img" src="assets/images/wontonbox.png" alt="Prawn Wonton box">
+
+    </div>
+
+  </div>
+  <div class="slide-bottom-bar" style="background: var(--wonton)"></div>
+</div>
+
+
+<!-- ========================
+     DAN DAN NOODLES
+======================== -->
+<div class="slide product-slide" id="slide-dandan">
+
+  <nav class="slide-nav-bar">
+    <img class="nav-logo" src="assets/images/logo_white.png" alt="United Food Co">
+    <div class="nav-tabs">
+      <button class="nav-tab"        onclick="showProductSlide(1)">Vegetable Tonkotsu</button>
+      <button class="nav-tab"        onclick="showProductSlide(2)">Prawn Wonton</button>
+      <button class="nav-tab active" onclick="showProductSlide(3)" style="border-bottom-color: var(--dandan)">Dan Dan Noodles</button>
+    </div>
+    <button class="nav-home" onclick="showTitleSlide()">← Overview</button>
+  </nav>
+
+  <div class="product-body">
+
+    <div class="product-left">
+      <div class="product-header-block">
+        <div class="product-category">Asian Kitchen</div>
+        <div class="product-title" style="color: var(--dandan)">DAN DAN<br>NOODLES</div>
+        <div class="product-color-bar" style="background: var(--dandan)"></div>
+        <p class="product-desc">Savoury noodles in a rich, sichuan sauce with vegetables and mild chilli, delivering an authentic, plant-based dish ready for effortless service.</p>
+      </div>
+      <img class="product-bowl-img" src="assets/images/dandanbowl.png" alt="Dan Dan Noodles bowl">
+    </div>
+
+    <div class="product-center">
+
+      <div class="spec-section">
+        <div class="spec-section-title">Product Codes</div>
+        <div class="spec-codes">
+          <div>
+            <div class="spec-code-label">Item No.</div>
+            <div class="spec-code-value">ORNSPDN20</div>
+          </div>
+          <div>
+            <div class="spec-code-label">Short Code</div>
+            <div class="spec-code-value" style="color: var(--dandan)">9281</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Ingredients</div>
+        <p class="ingredients-text">Ramen Noodles (67%) [<strong>wheat</strong> flour, water, raising agent (500), colour (160a)], Water, Spinach, <strong>Soy</strong> Sauce [water, salt, soybeans, <strong>wheat</strong>, alcohol], Chilli Sauce [water, chilli, garlic, sugar, vinegar, modified tapioca starch (1442), salt], <strong>Sesame</strong> Oil, Ear Mushroom, Corn Starch, Refined <strong>Soybean</strong> Oil, <strong>Soybean</strong> Protein, Chilli Oil [soybean oil, chilli], <strong>Sesame</strong> Seeds, Sugar, Shallots, Ginger, Garlic, Onion, Sichuan Pepper, Salt.</p>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Allergens</div>
+        <div class="allergen-tags">
+          <span class="allergen-tag">Wheat</span>
+          <span class="allergen-tag">Gluten</span>
+          <span class="allergen-tag">Soy</span>
+          <span class="allergen-tag">Sesame</span>
+        </div>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Cooking Instructions — From Frozen</div>
+        <div class="cooking-steps">
+          <div class="cooking-step">
+            <div class="step-num" style="color: var(--dandan)">1</div>
+            <div class="step-text">Remove product from packaging and <strong>set aside the sachet of fried shallots</strong>.</div>
+          </div>
+          <div class="cooking-step">
+            <div class="step-num" style="color: var(--dandan)">2</div>
+            <div class="step-text">Place in a microwave safe dish and cover with a lid.</div>
+          </div>
+          <div class="cooking-step">
+            <div class="step-num" style="color: var(--dandan)">3</div>
+            <div class="step-text">Heat on high (1000W) for <strong>6 minutes</strong>.</div>
+          </div>
+          <div class="cooking-step">
+            <div class="step-num" style="color: var(--dandan)">4</div>
+            <div class="step-text">Sprinkle fried shallots over noodles before serving.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="product-right">
+
+      <div class="spec-section">
+        <div class="spec-section-title">Nutrition Information</div>
+        <p class="serving-note">Serving Size: 308g &nbsp;|&nbsp; Servings per pack: 20</p>
+        <table class="nutrition-table">
+          <thead>
+            <tr><th>Nutrient</th><th>Per Serving</th><th>Per 100g</th></tr>
+          </thead>
+          <tbody>
+            <tr class="bold-row"><td>Energy</td><td>3690kJ</td><td>1200kJ</td></tr>
+            <tr class="bold-row"><td>Protein</td><td>27.0g</td><td>8.8g</td></tr>
+            <tr class="bold-row"><td>Fat, Total</td><td>19.8g</td><td>6.4g</td></tr>
+            <tr class="sub-row"><td>– Saturated</td><td>2.8g</td><td>0.9g</td></tr>
+            <tr class="bold-row"><td>Carbohydrate</td><td>143.0g</td><td>46.4g</td></tr>
+            <tr class="sub-row"><td>– Sugars</td><td>11.6g</td><td>3.8g</td></tr>
+            <tr class="bold-row"><td>Sodium</td><td>900mg</td><td>292mg</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Storage</div>
+        <div class="storage-info">
+          <div class="storage-temp">
+            <div class="temp-val" style="color: var(--dandan)">−18°C</div>
+            <div class="temp-sub">Keep Frozen</div>
+          </div>
+          <div class="storage-notes">
+            <p>Store at or below −18°C.</p>
+            <p>Do not refreeze once thawed.</p>
+            <p>Shelf life: <strong>24 months</strong></p>
+            <p>Product of Vietnam.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec-section">
+        <div class="spec-section-title">Packaging</div>
+        <div class="packaging-row">
+          <div><div class="pack-label">Size</div><div class="pack-val">308g</div></div>
+          <div><div class="pack-label">Outer</div><div class="pack-val">20 × 308g</div></div>
+          <div><div class="pack-label">Pallet</div><div class="pack-val">48 ctns</div></div>
+        </div>
+      </div>
+
+      <img class="box-img" src="assets/images/dandanbox.png" alt="Dan Dan Noodles box">
+
+    </div>
+
+  </div>
+  <div class="slide-bottom-bar" style="background: var(--dandan)"></div>
+</div>
+
+
+<script src="assets/main.js"></script>
+</body>
+</html>
