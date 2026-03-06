@@ -473,6 +473,183 @@ html, body {
 .slide-bottom-bar { height: 4px; flex-shrink: 0; }
 
 /* ========================
+   CALC BUTTON
+======================== */
+#calc-btn {
+  position: fixed;
+  top: 14px;
+  right: 60px;
+  z-index: 9999;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  font-family: 'Gotham', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-radius: 4px;
+  line-height: 1;
+}
+#calc-btn:hover { background: rgba(255,255,255,0.22); }
+#calc-btn.active { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.6); }
+
+/* ========================
+   PRICE CALCULATOR MODAL
+======================== */
+.calc-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(26,26,26,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.calc-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.calc-modal {
+  background: var(--cream);
+  width: clamp(300px, 28vw, 440px);
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  transform: translateY(8px);
+  transition: transform 0.2s ease;
+}
+.calc-overlay.open .calc-modal { transform: translateY(0); }
+
+.calc-header {
+  background: var(--charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4vh 1.5vw;
+}
+.calc-title {
+  font-family: 'Gotham', sans-serif;
+  font-size: clamp(9px, 0.78vw, 12px);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+}
+.calc-close {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px 4px;
+  transition: color 0.15s;
+}
+.calc-close:hover { color: white; }
+
+.calc-body {
+  padding: 1.8vh 1.5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9vh;
+}
+
+.calc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vw;
+}
+.calc-label {
+  font-family: 'Gotham', sans-serif;
+  font-size: clamp(9px, 0.75vw, 12px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  flex: 1;
+}
+.calc-input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--border);
+  background: white;
+  width: clamp(90px, 8vw, 130px);
+  flex-shrink: 0;
+}
+.calc-affix {
+  font-family: 'Gotham', sans-serif;
+  font-size: clamp(10px, 0.8vw, 13px);
+  color: var(--mid-grey);
+  padding: 0 0.4vw;
+  flex-shrink: 0;
+}
+.calc-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(12px, 1vw, 15px);
+  color: var(--charcoal);
+  padding: 0.6vh 0.3vw;
+  width: 0;
+  text-align: left;
+}
+.calc-input.right { text-align: right; }
+.calc-input::placeholder { color: #ccc; }
+
+.calc-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.4vh 0;
+}
+
+.calc-results {
+  margin-top: 0.6vh;
+  background: white;
+  border: 1.5px solid var(--border);
+  padding: 1.2vh 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+}
+.calc-result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.calc-result-label {
+  font-family: 'Gotham', sans-serif;
+  font-size: clamp(8px, 0.68vw, 11px);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid-grey);
+}
+.calc-result-val {
+  font-family: 'Gotham', sans-serif;
+  font-size: clamp(11px, 0.95vw, 15px);
+  color: var(--charcoal);
+}
+.calc-result-row.final {
+  border-top: 1.5px solid var(--charcoal);
+  margin-top: 0.3vh;
+  padding-top: 0.6vh;
+}
+.calc-result-row.final .calc-result-label { color: var(--charcoal); }
+.calc-result-row.final .calc-result-val {
+  font-size: clamp(14px, 1.3vw, 20px);
+}
+
+/* ========================
    FULLSCREEN BUTTON
 ======================== */
 #fullscreen-btn {

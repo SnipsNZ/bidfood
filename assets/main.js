@@ -83,7 +83,11 @@ document.addEventListener('keydown', e => {
     if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
       if (idx > 0) showProductSlide(idx); else showTitleSlide();
     }
-    if (e.key === 'Escape') showTitleSlide();
+    if (e.key === 'Escape') {
+      const calc = document.getElementById('calc-overlay');
+      if (calc && calc.classList.contains('open')) { toggleCalc(); return; }
+      showTitleSlide();
+    }
   }
 });
 
@@ -97,6 +101,56 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   autoTimer = setInterval(nextTitleSlide, 5000);
 });
+
+// ========================
+// PRICE CALCULATOR
+// ========================
+function toggleCalc() {
+  const overlay = document.getElementById('calc-overlay');
+  const btn = document.getElementById('calc-btn');
+  const isOpen = overlay.classList.toggle('open');
+  btn.classList.toggle('active', isOpen);
+  if (isOpen) calcPrice();
+}
+
+function handleCalcOverlayClick(e) {
+  if (e.target === e.currentTarget) toggleCalc();
+}
+
+function calcPrice() {
+  const cost     = parseFloat(document.getElementById('c-cost').value)    || 0;
+  const freight  = parseFloat(document.getElementById('c-freight').value)  || 0;
+  const labour   = parseFloat(document.getElementById('c-labour').value)   || 0;
+  const overhead = parseFloat(document.getElementById('c-overhead').value) || 0;
+  const margin   = parseFloat(document.getElementById('c-margin').value)   || 0;
+  const gst      = parseFloat(document.getElementById('c-gst').value)      || 0;
+
+  const fmt = v => '$' + v.toFixed(2);
+  const dash = '—';
+
+  if (cost <= 0) {
+    document.getElementById('r-cost').textContent  = dash;
+    document.getElementById('r-exgst').textContent = dash;
+    document.getElementById('r-gst').textContent   = dash;
+    document.getElementById('r-final').textContent = dash;
+    return;
+  }
+
+  // Total cost: add freight, labour, overhead as % of cost price
+  const totalCost = cost * (1 + (freight + labour + overhead) / 100);
+
+  // Apply margin: selling price (ex GST) = totalCost / (1 - margin%)
+  const marginFactor = margin < 100 ? (1 - margin / 100) : null;
+  const exGST = marginFactor ? totalCost / marginFactor : 0;
+
+  const gstAmt = exGST * (gst / 100);
+  const final  = exGST + gstAmt;
+
+  document.getElementById('r-cost').textContent  = fmt(totalCost);
+  document.getElementById('r-exgst').textContent = marginFactor ? fmt(exGST) : '—';
+  document.getElementById('r-gst').textContent   = marginFactor ? fmt(gstAmt) : '—';
+  document.getElementById('r-final').textContent = marginFactor ? fmt(final)  : '—';
+}
 
 // ========================
 // FULLSCREEN
