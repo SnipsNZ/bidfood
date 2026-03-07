@@ -444,7 +444,7 @@ html, body {
 /* NUTRITION TABLE */
 .serving-note {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(14px, 1.17vw, 20px);
+  font-size: clamp(12px, 1vw, 18px);
   color: var(--mid-grey);
   margin-bottom: 0.5vh;
 }
@@ -452,7 +452,7 @@ html, body {
 .nutrition-table { width: 100%; border-collapse: collapse; }
 .nutrition-table th {
   font-family: 'Gotham', sans-serif;
-  font-size: clamp(14px, 1.17vw, 20px);
+  font-size: clamp(12px, 1vw, 18px);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--mid-grey);
@@ -462,7 +462,7 @@ html, body {
 }
 .nutrition-table th:first-child { text-align: left; }
 .nutrition-table td {
-  font-size: clamp(18px, 1.58vw, 24px);
+  font-size: clamp(15px, 1.35vw, 21px);
   color: #444;
   text-align: right;
   padding: 0.4vh 0;
