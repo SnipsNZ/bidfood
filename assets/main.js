@@ -215,8 +215,8 @@ function calcPrice() {
     return;
   }
 
-  // Landed cost: purchase price + freight %
-  const landed = cost * (1 + freight / 100);
+  // Landed cost: purchase price + freight $
+  const landed = cost + freight;
 
   // Total cost including prep labour
   const totalCost = landed + prepLabour;
