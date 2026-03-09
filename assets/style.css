@@ -276,13 +276,14 @@ body.light-mode .nav-logo {
   content: url('images/logo_black.png');
 }
 
-.nav-tabs { display: flex; }
+.nav-tabs { display: flex; flex: 1; }
 
 .nav-tab {
   font-family: 'Gotham', sans-serif;
   font-size: clamp(8px, 0.75vw, 12px);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  flex: 1;
   padding: 0 1.3vw;
   height: 7vh;
   background: transparent;
