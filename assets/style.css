@@ -376,7 +376,7 @@ body.light-mode .nav-logo {
   min-height: 0;
   width: 100%;
   object-fit: contain;
-  object-position: bottom center;
+  object-position: center;
   display: block;
 }
 
