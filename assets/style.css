@@ -478,7 +478,7 @@ body.light-mode .nav-logo {
 }
 
 .cooking-steps { display: flex; flex-direction: column; gap: 0.6vh; }
-.cooking-step { display: flex; gap: 0.7vw; align-items: baseline; }
+.cooking-step { display: flex; gap: 0.7vw; align-items: flex-start; }
 .step-num {
   font-family: 'Gotham', sans-serif;
   font-size: clamp(16px, 1.6vw, 24px);
@@ -487,8 +487,9 @@ body.light-mode .nav-logo {
   width: 2.2vw;
   text-align: center;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 0.2em;
 }
 .cook-icon {
   width: 1.6vw;
