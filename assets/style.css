@@ -193,6 +193,15 @@ html, body {
   flex-shrink: 0;
   position: relative;
   top: clamp(20px, 4vh, 50px);
+  left: -1.5vw;
+}
+
+body.light-mode .slide-nav-bar {
+  background: white;
+}
+
+body.light-mode .nav-logo {
+  content: url('images/logo_black.png');
 }
 
 .nav-tabs { display: flex; }

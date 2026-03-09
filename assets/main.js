@@ -152,9 +152,10 @@ let themeState = 2; // default: tinted
 const themeBtn = () => document.getElementById('dark-btn');
 
 function applyTheme() {
-  document.body.classList.remove('dark-mode', 'tinted-mode', 'dark-ui');
+  document.body.classList.remove('dark-mode', 'tinted-mode', 'dark-ui', 'light-mode');
   const btn = themeBtn();
   if (themeState === 1) {
+    document.body.classList.add('light-mode');
     btn.classList.remove('active');
     btn.title = 'Dark mode';
     btn.textContent = '◑';
