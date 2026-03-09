@@ -259,15 +259,17 @@ html, body {
 }
 
 .nav-logo {
-  /* positioned relative to .slide (position:absolute), obscured at top by nav z-index:10 */
+  /* watermark behind product-body (z-index:2); fills entire centre column */
   display: block;
-  width: auto;
-  height: 23vh;
   position: absolute;
-  top: 0;
-  /* positioned in the last third of the centre column (centre col: 30vw–72vw, last third from 58vw) */
-  left: 58vw;
+  left: 30vw;
+  top: 7vh;
+  width: 42vw;
+  height: calc(100vh - 7vh - 4px);
+  object-fit: contain;
+  opacity: 0.07;
   z-index: 1;
+  pointer-events: none;
 }
 
 body.light-mode .slide-nav-bar {
@@ -328,6 +330,8 @@ body.light-mode .nav-logo {
   display: flex;
   overflow: hidden;
   min-height: 0;
+  position: relative;
+  z-index: 2;
 }
 
 /* LEFT — fixed width, no scroll */
