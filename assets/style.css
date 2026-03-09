@@ -265,8 +265,8 @@ html, body {
   height: 23vh;
   position: absolute;
   top: 0;
-  /* left edge halfway between product-left right edge (30vw) and end of "48 ctns" (~51vw) */
-  left: 40.5vw;
+  /* positioned in the last third of the centre column (centre col: 30vw–72vw, last third from 58vw) */
+  left: 58vw;
   z-index: 1;
 }
 
