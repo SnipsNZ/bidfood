@@ -13,33 +13,49 @@
 
 <!-- TITLE SLIDE -->
 <div class="slide active" id="title-slide">
-  <div class="title-bowl-panel">
-    <img class="bowl-img visible" id="bowl0" src="assets/images/tonkotsubowl.png" alt="Vegetable Tonkotsu">
-    <img class="bowl-img"         id="bowl1" src="assets/images/wontonbowl.png"   alt="Prawn Wonton">
-    <img class="bowl-img"         id="bowl2" src="assets/images/dandanbowl.png"   alt="Dan Dan Noodles">
-    <div class="bowl-gradient"></div>
+  <div class="title-label-bar">
+    <span class="title-label-item">Asian Kitchen</span>
+    <div class="title-label-divider"></div>
+    <span class="title-label-item">Frozen Noodle Range</span>
+    <div class="title-label-divider"></div>
+    <span class="title-label-item">20 × 308g / Bulk</span>
+    <div class="title-label-divider"></div>
+    <span class="title-label-item">Product of Vietnam</span>
   </div>
-  <div class="title-info-panel">
-    <img class="title-logo" src="assets/images/logo_white.png" alt="United Food Co">
-    <div class="title-label">Asian Kitchen — Product Range</div>
-    <div class="product-names-container">
-      <div class="product-name-item active" id="name0">
-        <h1 style="color: var(--tonkotsu)">VEGETABLE<br>TONKOTSU<br>NOODLE RAMEN</h1>
-        <p class="product-tagline">Tender noodles in a rich vegetable broth, layered with umami depth and topped with vibrant vegetables.</p>
-      </div>
-      <div class="product-name-item" id="name1">
-        <h1 style="color: var(--wonton)">PRAWN<br>WONTON<br>NOODLE SOUP</h1>
-        <p class="product-tagline">A comforting classic with juicy prawn wontons, springy noodles and a savoury broth.</p>
-      </div>
-      <div class="product-name-item" id="name2">
-        <h1 style="color: var(--dandan)">DAN DAN<br>NOODLES</h1>
-        <p class="product-tagline">Savoury noodles in a rich, sichuan sauce with vegetables and mild chilli.</p>
+  <div class="title-content">
+    <div class="title-info-panel">
+      <img class="title-logo" src="assets/images/logo_white.png" alt="United Food Co">
+      <div class="product-names-container">
+        <div class="product-name-item active" id="name0">
+          <div class="title-series">Asian Kitchen · SKU 9270</div>
+          <h1 style="color: var(--tonkotsu)">VEGETABLE<br>TONKOTSU<br>NOODLE RAMEN</h1>
+          <p class="product-tagline">Tender noodles in a rich vegetable broth, layered with umami depth and topped with vibrant vegetables.</p>
+          <button class="view-btn primary" onclick="showProductSlide(1)">View Details →</button>
+        </div>
+        <div class="product-name-item" id="name1">
+          <div class="title-series">Asian Kitchen · SKU 9274</div>
+          <h1 style="color: var(--wonton)">PRAWN<br>WONTON<br>NOODLE SOUP</h1>
+          <p class="product-tagline">A comforting classic with juicy prawn wontons, springy noodles and a savoury broth.</p>
+          <button class="view-btn primary" onclick="showProductSlide(2)">View Details →</button>
+        </div>
+        <div class="product-name-item" id="name2">
+          <div class="title-series">Asian Kitchen · SKU 9281</div>
+          <h1 style="color: var(--dandan)">DAN DAN<br>NOODLES</h1>
+          <p class="product-tagline">Savoury noodles in a rich Sichuan sauce with vegetables and mild chilli.</p>
+          <button class="view-btn primary" onclick="showProductSlide(3)">View Details →</button>
+        </div>
       </div>
     </div>
-    <div class="title-spacer"></div>
-    <div class="title-slide-btns">
-      <button class="view-btn primary" id="view-products-btn">View Products ↓</button>
+    <div class="title-bowl-panel">
+      <img class="bowl-img visible" id="bowl0" src="assets/images/tonkotsubowl.png" alt="Vegetable Tonkotsu">
+      <img class="bowl-img"         id="bowl1" src="assets/images/wontonbowl.png"   alt="Prawn Wonton">
+      <img class="bowl-img"         id="bowl2" src="assets/images/dandanbowl.png"   alt="Dan Dan Noodles">
     </div>
+  </div>
+  <div class="title-dots">
+    <div class="title-dot active" onclick="goToTitleSlide(0)" style="--dot-color: var(--tonkotsu)"></div>
+    <div class="title-dot" onclick="goToTitleSlide(1)" style="--dot-color: var(--wonton)"></div>
+    <div class="title-dot" onclick="goToTitleSlide(2)" style="--dot-color: var(--dandan)"></div>
   </div>
 </div>
 

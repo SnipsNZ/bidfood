@@ -31,6 +31,9 @@ function goToTitleSlide(idx) {
 
   document.getElementById(next.nameId).classList.add('active');
 
+  // update dots
+  document.querySelectorAll('.title-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+
   if (autoTimer) clearInterval(autoTimer);
   autoTimer = setInterval(nextTitleSlide, 5000);
 }
@@ -108,10 +111,6 @@ document.addEventListener('keydown', e => {
 // ========================
 document.addEventListener('DOMContentLoaded', () => {
   applyTheme();
-  // wire up the view products button properly
-  document.getElementById('view-products-btn').addEventListener('click', () => {
-    showProductSlide(currentTitleSlide + 1);
-  });
   autoTimer = setInterval(nextTitleSlide, 5000);
 });
 
