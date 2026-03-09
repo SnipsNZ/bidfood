@@ -259,29 +259,56 @@ html, body {
 }
 
 .nav-logo {
-  /* watermark behind product-body (z-index:2); fills entire centre column */
+  /* div watermark — behind product-body (z-index:2); fills centre column */
   display: block;
   position: absolute;
   left: 30vw;
   top: 7vh;
   width: 42vw;
-  height: calc(100vh - 7vh - 4px);
-  object-fit: contain;
+  height: calc(91vh - 4px); /* small gap at bottom */
+  background-image: url('images/logo_white.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 40% center;
   opacity: 0.07;
   z-index: 1;
   pointer-events: none;
 }
 
+/* TINTED (coloured) mode — fully black logo */
+body.tinted-mode .nav-logo {
+  background-image: url('images/logo_black.png');
+  opacity: 1;
+}
+
+/* DARK (black) mode — logo in product accent colour via mask */
+body.dark-mode .nav-logo {
+  background-image: none;
+  opacity: 0.25;
+  -webkit-mask-image: url('images/logo_white.png');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: 40% center;
+  mask-image: url('images/logo_white.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: 40% center;
+}
+body.dark-mode #slide-tonkotsu .nav-logo { background-color: var(--tonkotsu); }
+body.dark-mode #slide-wonton   .nav-logo { background-color: var(--wonton); }
+body.dark-mode #slide-dandan   .nav-logo { background-color: var(--dandan); }
+body.dark-mode #slide-gyoza    .nav-logo { background-color: var(--gyoza); }
+body.dark-mode #slide-dumpling .nav-logo { background-color: var(--dumpling); }
+body.dark-mode #slide-shumai   .nav-logo { background-color: var(--shumai); }
+body.dark-mode #slide-hargow   .nav-logo { background-color: var(--hargow); }
+
 body.light-mode .slide-nav-bar {
   background: white;
 }
 
-body.tinted-mode .nav-logo {
-  content: url('images/logo_black.png');
-}
-
+/* LIGHT mode — unchanged (black logo, same watermark opacity) */
 body.light-mode .nav-logo {
-  content: url('images/logo_black.png');
+  background-image: url('images/logo_black.png');
 }
 
 .nav-tabs { display: flex; flex: 1; }
