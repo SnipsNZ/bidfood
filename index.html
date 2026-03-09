@@ -44,18 +44,50 @@
           <p class="product-tagline">Savoury noodles in a rich Sichuan sauce with vegetables and mild chilli.</p>
           <button class="view-btn primary" onclick="showProductSlide(3)">View Details →</button>
         </div>
+        <div class="product-name-item" id="name3">
+          <div class="title-series">Japanese Kitchen · SKU 2862</div>
+          <h1 style="color: var(--gyoza)">SHIITAKE<br>GYOZA</h1>
+          <p class="product-tagline">Delicately wrapped handmade gyoza packed full of Shiitake mushrooms.</p>
+          <button class="view-btn primary" onclick="showProductSlide(4)">View Details →</button>
+        </div>
+        <div class="product-name-item" id="name4">
+          <div class="title-series">Asian Kitchen · SKU 2877</div>
+          <h1 style="color: var(--dumpling)">GINGER<br>PRAWN<br>DUMPLING</h1>
+          <p class="product-tagline">Delicately wrapped handmade dumplings packed with prawns and a hint of ginger.</p>
+          <button class="view-btn primary" onclick="showProductSlide(5)">View Details →</button>
+        </div>
+        <div class="product-name-item" id="name5">
+          <div class="title-series">Asian Kitchen · SKU 2904</div>
+          <h1 style="color: var(--shumai)">PRAWN<br>SHUMAI</h1>
+          <p class="product-tagline">Delicately wrapped handmade dim sum parcels with the perfect amount of juicy prawns.</p>
+          <button class="view-btn primary" onclick="showProductSlide(6)">View Details →</button>
+        </div>
+        <div class="product-name-item" id="name6">
+          <div class="title-series">Asian Kitchen · SKU 2924</div>
+          <h1 style="color: var(--hargow)">PRAWN<br>HARGOW</h1>
+          <p class="product-tagline">Delicately wrapped handmade hargow packed with juicy prawns.</p>
+          <button class="view-btn primary" onclick="showProductSlide(7)">View Details →</button>
+        </div>
       </div>
     </div>
     <div class="title-bowl-panel">
-      <img class="bowl-img visible" id="bowl0" src="assets/images/tonkotsubowl.png" alt="Vegetable Tonkotsu">
-      <img class="bowl-img"         id="bowl1" src="assets/images/wontonbowl.png"   alt="Prawn Wonton">
-      <img class="bowl-img"         id="bowl2" src="assets/images/dandanbowl.png"   alt="Dan Dan Noodles">
+      <img class="bowl-img visible" id="bowl0" src="assets/images/9270-lifestyle.png" alt="Vegetable Tonkotsu">
+      <img class="bowl-img"         id="bowl1" src="assets/images/9274-lifestyle.png" alt="Prawn Wonton">
+      <img class="bowl-img"         id="bowl2" src="assets/images/9281-lifestyle.png" alt="Dan Dan Noodles">
+      <img class="bowl-img" id="bowl3" src="assets/images/2862-lifestyle.png" alt="Shiitake Gyoza">
+      <img class="bowl-img" id="bowl4" src="assets/images/2877-lifestyle.png" alt="Ginger Prawn Dumpling">
+      <img class="bowl-img" id="bowl5" src="assets/images/2904-lifestyle.png" alt="Prawn Shumai">
+      <img class="bowl-img" id="bowl6" src="assets/images/2924-lifestyle.png" alt="Prawn Hargow">
     </div>
   </div>
   <div class="title-dots">
     <div class="title-dot active" onclick="goToTitleSlide(0)" style="--dot-color: var(--tonkotsu)"></div>
     <div class="title-dot" onclick="goToTitleSlide(1)" style="--dot-color: var(--wonton)"></div>
     <div class="title-dot" onclick="goToTitleSlide(2)" style="--dot-color: var(--dandan)"></div>
+    <div class="title-dot" onclick="goToTitleSlide(3)" style="--dot-color: var(--gyoza)"></div>
+    <div class="title-dot" onclick="goToTitleSlide(4)" style="--dot-color: var(--dumpling)"></div>
+    <div class="title-dot" onclick="goToTitleSlide(5)" style="--dot-color: var(--shumai)"></div>
+    <div class="title-dot" onclick="goToTitleSlide(6)" style="--dot-color: var(--hargow)"></div>
   </div>
 </div>
 
@@ -65,9 +97,13 @@
   <nav class="slide-nav-bar">
     <img class="nav-logo" src="assets/images/logo_white.png" alt="United Food Co">
     <div class="nav-tabs">
-      <button class="nav-tab active" onclick="showProductSlide(1)" style="border-bottom-color: var(--tonkotsu)">Vegetable Tonkotsu</button>
-      <button class="nav-tab"        onclick="showProductSlide(2)">Prawn Wonton</button>
-      <button class="nav-tab"        onclick="showProductSlide(3)">Dan Dan Noodles</button>
+      <button class="nav-tab active" onclick="showProductSlide(1)" style="border-bottom-color: var(--tonkotsu)">Vege Tonkotsu</button>
+      <button class="nav-tab" onclick="showProductSlide(2)">Prawn Wonton</button>
+      <button class="nav-tab" onclick="showProductSlide(3)">Dan Dan</button>
+      <button class="nav-tab" onclick="showProductSlide(4)">Shiitake Gyoza</button>
+      <button class="nav-tab" onclick="showProductSlide(5)">Ginger Prawn</button>
+      <button class="nav-tab" onclick="showProductSlide(6)">Prawn Shumai</button>
+      <button class="nav-tab" onclick="showProductSlide(7)">Prawn Hargow</button>
     </div>
     <button class="nav-home" onclick="showTitleSlide()">← Overview</button>
   </nav>
@@ -77,7 +113,7 @@
       <div class="product-title" style="color: var(--tonkotsu)">VEGETABLE<br>TONKOTSU<br>NOODLE<br>RAMEN</div>
       <div class="product-color-bar" style="background: var(--tonkotsu)"></div>
       <p class="product-desc">Tender noodles in a rich vegetable broth, layered with umami depth and topped with vibrant vegetables for a warming, satisfying ramen experience.</p>
-      <img class="product-bowl-img" src="assets/images/tonkotsubowl.png" alt="Vegetable Tonkotsu bowl">
+      <img class="product-bowl-img" src="assets/images/9270-lifestyle.png" alt="Vegetable Tonkotsu bowl">
     </div>
     <div class="product-center">
       <div class="spec-section">
@@ -118,7 +154,7 @@
       </div>
     </div>
     <div class="product-right">
-      <img class="box-img" src="assets/images/tonkotsubox.png" alt="Vegetable Tonkotsu box">
+      <img class="box-img" src="assets/images/9270-carton.png" alt="Vegetable Tonkotsu box">
       <div class="spec-section nutrition-section">
         <div class="spec-section-title">Nutrition Information</div>
         <p class="serving-note">Serving Size: 308g &nbsp;|&nbsp; Servings per pack: 20</p>
@@ -146,9 +182,13 @@
   <nav class="slide-nav-bar">
     <img class="nav-logo" src="assets/images/logo_white.png" alt="United Food Co">
     <div class="nav-tabs">
-      <button class="nav-tab"        onclick="showProductSlide(1)">Vegetable Tonkotsu</button>
+      <button class="nav-tab" onclick="showProductSlide(1)">Vege Tonkotsu</button>
       <button class="nav-tab active" onclick="showProductSlide(2)" style="border-bottom-color: var(--wonton)">Prawn Wonton</button>
-      <button class="nav-tab"        onclick="showProductSlide(3)">Dan Dan Noodles</button>
+      <button class="nav-tab" onclick="showProductSlide(3)">Dan Dan</button>
+      <button class="nav-tab" onclick="showProductSlide(4)">Shiitake Gyoza</button>
+      <button class="nav-tab" onclick="showProductSlide(5)">Ginger Prawn</button>
+      <button class="nav-tab" onclick="showProductSlide(6)">Prawn Shumai</button>
+      <button class="nav-tab" onclick="showProductSlide(7)">Prawn Hargow</button>
     </div>
     <button class="nav-home" onclick="showTitleSlide()">← Overview</button>
   </nav>
@@ -158,7 +198,7 @@
       <div class="product-title" style="color: var(--wonton)">PRAWN<br>WONTON<br>NOODLE<br>SOUP</div>
       <div class="product-color-bar" style="background: var(--wonton)"></div>
       <p class="product-desc">A comforting classic with juicy prawn wontons, springy noodles and a savoury broth.</p>
-      <img class="product-bowl-img" src="assets/images/wontonbowl.png" alt="Prawn Wonton bowl">
+      <img class="product-bowl-img" src="assets/images/9274-lifestyle.png" alt="Prawn Wonton bowl">
     </div>
     <div class="product-center">
       <div class="spec-section">
@@ -200,7 +240,7 @@
       </div>
     </div>
     <div class="product-right">
-      <img class="box-img" src="assets/images/wontonbox.png" alt="Prawn Wonton box">
+      <img class="box-img" src="assets/images/9274-carton.png" alt="Prawn Wonton box">
       <div class="spec-section nutrition-section">
         <div class="spec-section-title">Nutrition Information</div>
         <p class="serving-note">Serving Size: 308g &nbsp;|&nbsp; Servings per pack: 20</p>
@@ -228,9 +268,13 @@
   <nav class="slide-nav-bar">
     <img class="nav-logo" src="assets/images/logo_white.png" alt="United Food Co">
     <div class="nav-tabs">
-      <button class="nav-tab"        onclick="showProductSlide(1)">Vegetable Tonkotsu</button>
-      <button class="nav-tab"        onclick="showProductSlide(2)">Prawn Wonton</button>
-      <button class="nav-tab active" onclick="showProductSlide(3)" style="border-bottom-color: var(--dandan)">Dan Dan Noodles</button>
+      <button class="nav-tab" onclick="showProductSlide(1)">Vege Tonkotsu</button>
+      <button class="nav-tab" onclick="showProductSlide(2)">Prawn Wonton</button>
+      <button class="nav-tab active" onclick="showProductSlide(3)" style="border-bottom-color: var(--dandan)">Dan Dan</button>
+      <button class="nav-tab" onclick="showProductSlide(4)">Shiitake Gyoza</button>
+      <button class="nav-tab" onclick="showProductSlide(5)">Ginger Prawn</button>
+      <button class="nav-tab" onclick="showProductSlide(6)">Prawn Shumai</button>
+      <button class="nav-tab" onclick="showProductSlide(7)">Prawn Hargow</button>
     </div>
     <button class="nav-home" onclick="showTitleSlide()">← Overview</button>
   </nav>
@@ -240,7 +284,7 @@
       <div class="product-title" style="color: var(--dandan)">DAN DAN<br>NOODLES</div>
       <div class="product-color-bar" style="background: var(--dandan)"></div>
       <p class="product-desc">Savoury noodles in a rich, sichuan sauce with vegetables and mild chilli, delivering an authentic, plant-based dish ready for effortless service.</p>
-      <img class="product-bowl-img" src="assets/images/dandanbowl.png" alt="Dan Dan Noodles bowl">
+      <img class="product-bowl-img" src="assets/images/9281-lifestyle.png" alt="Dan Dan Noodles bowl">
     </div>
     <div class="product-center">
       <div class="spec-section">
@@ -282,7 +326,7 @@
       </div>
     </div>
     <div class="product-right">
-      <img class="box-img" src="assets/images/dandanbox.png" alt="Dan Dan Noodles box">
+      <img class="box-img" src="assets/images/9281-carton.png" alt="Dan Dan Noodles box">
       <div class="spec-section nutrition-section">
         <div class="spec-section-title">Nutrition Information</div>
         <p class="serving-note">Serving Size: 308g &nbsp;|&nbsp; Servings per pack: 20</p>
@@ -302,6 +346,304 @@
     </div>
   </div>
   <div class="slide-bottom-bar" style="background: var(--dandan)"></div>
+</div>
+
+
+<!-- SHIITAKE GYOZA -->
+<div class="slide product-slide" id="slide-gyoza">
+  <nav class="slide-nav-bar">
+    <img class="nav-logo" src="assets/images/logo_white.png" alt="United Food Co">
+    <div class="nav-tabs">
+      <button class="nav-tab" onclick="showProductSlide(1)">Vege Tonkotsu</button>
+      <button class="nav-tab" onclick="showProductSlide(2)">Prawn Wonton</button>
+      <button class="nav-tab" onclick="showProductSlide(3)">Dan Dan</button>
+      <button class="nav-tab active" onclick="showProductSlide(4)" style="border-bottom-color: var(--gyoza)">Shiitake Gyoza</button>
+      <button class="nav-tab" onclick="showProductSlide(5)">Ginger Prawn</button>
+      <button class="nav-tab" onclick="showProductSlide(6)">Prawn Shumai</button>
+      <button class="nav-tab" onclick="showProductSlide(7)">Prawn Hargow</button>
+    </div>
+    <button class="nav-home" onclick="showTitleSlide()">← Overview</button>
+  </nav>
+  <div class="product-body">
+    <div class="product-left">
+      <div class="product-category">Japanese Kitchen</div>
+      <div class="product-title" style="color: var(--gyoza)">SHIITAKE<br>GYOZA</div>
+      <div class="product-color-bar" style="background: var(--gyoza)"></div>
+      <p class="product-desc">Delicately wrapped handmade gyoza packed full of Shiitake mushrooms.</p>
+      <img class="product-bowl-img" src="assets/images/2862-lifestyle.png" alt="Shiitake Gyoza">
+    </div>
+    <div class="product-center">
+      <div class="spec-section">
+        <div class="spec-section-title">Packaging</div>
+        <div class="packaging-row">
+          <div><div class="pack-label">Size</div><div class="pack-val">5kg</div></div>
+          <div><div class="pack-label">Item No.</div><div class="pack-val">ORNDUSHG5</div></div>
+          <div><div class="pack-label">Short Code</div><div class="pack-val">2862</div></div>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Storage &amp; Shelf Life</div>
+        <div class="storage-info">
+          <div class="storage-temp"><div class="temp-val" style="color: var(--gyoza)">−18°C</div><div class="temp-sub">Keep Frozen</div></div>
+          <div class="storage-notes">
+            <p>Store at or below −18°C. Do not refreeze once thawed.</p>
+            <p>Shelf life: <strong>24 months</strong> &nbsp;|&nbsp; Product of Vietnam.</p>
+          </div>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Cooking Instructions</div>
+        <div class="cooking-steps">
+          <div class="cooking-step"><div class="step-num" style="color: var(--gyoza)">—</div><div class="step-text">Full cooking instructions coming soon.</div></div>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Allergens</div>
+        <div class="allergen-tags">
+          <span class="allergen-tag">Coming Soon</span>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Ingredients</div>
+        <p class="ingredients-text">Full ingredients list coming soon.</p>
+      </div>
+    </div>
+    <div class="product-right">
+      <img class="box-img" src="assets/images/2862-carton.png" alt="Shiitake Gyoza carton">
+      <div class="spec-section nutrition-section">
+        <div class="spec-section-title">Nutrition Information</div>
+        <p class="serving-note">Full nutrition panel coming soon.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-bottom-bar" style="background: var(--gyoza)"></div>
+</div>
+
+
+<!-- GINGER PRAWN DUMPLING -->
+<div class="slide product-slide" id="slide-dumpling">
+  <nav class="slide-nav-bar">
+    <img class="nav-logo" src="assets/images/logo_white.png" alt="United Food Co">
+    <div class="nav-tabs">
+      <button class="nav-tab" onclick="showProductSlide(1)">Vege Tonkotsu</button>
+      <button class="nav-tab" onclick="showProductSlide(2)">Prawn Wonton</button>
+      <button class="nav-tab" onclick="showProductSlide(3)">Dan Dan</button>
+      <button class="nav-tab" onclick="showProductSlide(4)">Shiitake Gyoza</button>
+      <button class="nav-tab active" onclick="showProductSlide(5)" style="border-bottom-color: var(--dumpling)">Ginger Prawn</button>
+      <button class="nav-tab" onclick="showProductSlide(6)">Prawn Shumai</button>
+      <button class="nav-tab" onclick="showProductSlide(7)">Prawn Hargow</button>
+    </div>
+    <button class="nav-home" onclick="showTitleSlide()">← Overview</button>
+  </nav>
+  <div class="product-body">
+    <div class="product-left">
+      <div class="product-category">Asian Kitchen</div>
+      <div class="product-title" style="color: var(--dumpling)">GINGER<br>PRAWN<br>DUMPLING</div>
+      <div class="product-color-bar" style="background: var(--dumpling)"></div>
+      <p class="product-desc">Delicately wrapped handmade dumplings packed with prawns and a hint of ginger.</p>
+      <img class="product-bowl-img" src="assets/images/2877-lifestyle.png" alt="Ginger Prawn Dumpling">
+    </div>
+    <div class="product-center">
+      <div class="spec-section">
+        <div class="spec-section-title">Packaging</div>
+        <div class="packaging-row">
+          <div><div class="pack-label">Size</div><div class="pack-val">5kg</div></div>
+          <div><div class="pack-label">Item No.</div><div class="pack-val">ORNDUPRG5</div></div>
+          <div><div class="pack-label">Short Code</div><div class="pack-val">2877</div></div>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Storage &amp; Shelf Life</div>
+        <div class="storage-info">
+          <div class="storage-temp"><div class="temp-val" style="color: var(--dumpling)">−18°C</div><div class="temp-sub">Keep Frozen</div></div>
+          <div class="storage-notes">
+            <p>Store at or below −18°C. Do not refreeze once thawed.</p>
+            <p>Shelf life: <strong>24 months</strong> &nbsp;|&nbsp; Product of Vietnam.</p>
+          </div>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Cooking Instructions</div>
+        <div class="cooking-steps">
+          <div class="cooking-step"><div class="step-num" style="color: var(--dumpling)">—</div><div class="step-text">Full cooking instructions coming soon.</div></div>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Allergens</div>
+        <div class="allergen-tags">
+          <span class="allergen-tag">Coming Soon</span>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Ingredients</div>
+        <p class="ingredients-text">Full ingredients list coming soon.</p>
+      </div>
+    </div>
+    <div class="product-right">
+      <img class="box-img" src="assets/images/2877-carton.png" alt="Ginger Prawn Dumpling carton">
+      <div class="spec-section nutrition-section">
+        <div class="spec-section-title">Nutrition Information</div>
+        <p class="serving-note">Full nutrition panel coming soon.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-bottom-bar" style="background: var(--dumpling)"></div>
+</div>
+
+
+<!-- PRAWN SHUMAI -->
+<div class="slide product-slide" id="slide-shumai">
+  <nav class="slide-nav-bar">
+    <img class="nav-logo" src="assets/images/logo_white.png" alt="United Food Co">
+    <div class="nav-tabs">
+      <button class="nav-tab" onclick="showProductSlide(1)">Vege Tonkotsu</button>
+      <button class="nav-tab" onclick="showProductSlide(2)">Prawn Wonton</button>
+      <button class="nav-tab" onclick="showProductSlide(3)">Dan Dan</button>
+      <button class="nav-tab" onclick="showProductSlide(4)">Shiitake Gyoza</button>
+      <button class="nav-tab" onclick="showProductSlide(5)">Ginger Prawn</button>
+      <button class="nav-tab active" onclick="showProductSlide(6)" style="border-bottom-color: var(--shumai)">Prawn Shumai</button>
+      <button class="nav-tab" onclick="showProductSlide(7)">Prawn Hargow</button>
+    </div>
+    <button class="nav-home" onclick="showTitleSlide()">← Overview</button>
+  </nav>
+  <div class="product-body">
+    <div class="product-left">
+      <div class="product-category">Asian Kitchen</div>
+      <div class="product-title" style="color: var(--shumai)">PRAWN<br>SHUMAI</div>
+      <div class="product-color-bar" style="background: var(--shumai)"></div>
+      <p class="product-desc">Delicately wrapped handmade dim sum parcels with the perfect amount of juicy prawns.</p>
+      <img class="product-bowl-img" src="assets/images/2904-lifestyle.png" alt="Prawn Shumai">
+    </div>
+    <div class="product-center">
+      <div class="spec-section">
+        <div class="spec-section-title">Packaging</div>
+        <div class="packaging-row">
+          <div><div class="pack-label">Size</div><div class="pack-val">5kg</div></div>
+          <div><div class="pack-label">Item No.</div><div class="pack-val">ORNDUPRS5</div></div>
+          <div><div class="pack-label">Short Code</div><div class="pack-val">2904</div></div>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Storage &amp; Shelf Life</div>
+        <div class="storage-info">
+          <div class="storage-temp"><div class="temp-val" style="color: var(--shumai)">−18°C</div><div class="temp-sub">Keep Frozen</div></div>
+          <div class="storage-notes">
+            <p>Store at or below −18°C. Do not refreeze once thawed.</p>
+            <p>Shelf life: <strong>24 months</strong> &nbsp;|&nbsp; Product of Vietnam.</p>
+          </div>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Cooking Instructions</div>
+        <div class="cooking-steps">
+          <div class="cooking-step"><div class="step-num" style="color: var(--shumai)">—</div><div class="step-text">Full cooking instructions coming soon.</div></div>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Allergens</div>
+        <div class="allergen-tags">
+          <span class="allergen-tag">Coming Soon</span>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Ingredients</div>
+        <p class="ingredients-text">Full ingredients list coming soon.</p>
+      </div>
+    </div>
+    <div class="product-right">
+      <img class="box-img" src="assets/images/2904-carton.png" alt="Prawn Shumai carton">
+      <div class="spec-section nutrition-section">
+        <div class="spec-section-title">Nutrition Information</div>
+        <p class="serving-note">Full nutrition panel coming soon.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-bottom-bar" style="background: var(--shumai)"></div>
+</div>
+
+
+<!-- PRAWN HARGOW -->
+<div class="slide product-slide" id="slide-hargow">
+  <nav class="slide-nav-bar">
+    <img class="nav-logo" src="assets/images/logo_white.png" alt="United Food Co">
+    <div class="nav-tabs">
+      <button class="nav-tab" onclick="showProductSlide(1)">Vege Tonkotsu</button>
+      <button class="nav-tab" onclick="showProductSlide(2)">Prawn Wonton</button>
+      <button class="nav-tab" onclick="showProductSlide(3)">Dan Dan</button>
+      <button class="nav-tab" onclick="showProductSlide(4)">Shiitake Gyoza</button>
+      <button class="nav-tab" onclick="showProductSlide(5)">Ginger Prawn</button>
+      <button class="nav-tab" onclick="showProductSlide(6)">Prawn Shumai</button>
+      <button class="nav-tab active" onclick="showProductSlide(7)" style="border-bottom-color: var(--hargow)">Prawn Hargow</button>
+    </div>
+    <button class="nav-home" onclick="showTitleSlide()">← Overview</button>
+  </nav>
+  <div class="product-body">
+    <div class="product-left">
+      <div class="product-category">Asian Kitchen</div>
+      <div class="product-title" style="color: var(--hargow)">PRAWN<br>HARGOW</div>
+      <div class="product-color-bar" style="background: var(--hargow)"></div>
+      <p class="product-desc">Delicately wrapped handmade hargow packed with juicy prawns.</p>
+      <img class="product-bowl-img" src="assets/images/2924-lifestyle.png" alt="Prawn Hargow">
+    </div>
+    <div class="product-center">
+      <div class="spec-section">
+        <div class="spec-section-title">Packaging</div>
+        <div class="packaging-row">
+          <div><div class="pack-label">Size</div><div class="pack-val">5kg</div></div>
+          <div><div class="pack-label">Item No.</div><div class="pack-val">ORNDUPRH5</div></div>
+          <div><div class="pack-label">Short Code</div><div class="pack-val">2924</div></div>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Storage &amp; Shelf Life</div>
+        <div class="storage-info">
+          <div class="storage-temp"><div class="temp-val" style="color: var(--hargow)">−18°C</div><div class="temp-sub">Keep Frozen</div></div>
+          <div class="storage-notes">
+            <p>Store at or below −18°C. Do not refreeze once thawed.</p>
+            <p>Shelf life: <strong>24 months</strong> &nbsp;|&nbsp; Product of Vietnam.</p>
+          </div>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Cooking Instructions — From Frozen</div>
+        <div class="cooking-steps">
+          <div class="cooking-step"><div class="step-num" style="color: var(--hargow)">1</div><div class="step-text">Remove product from packaging. Line a steamer with baking paper. Place product into steamer and steam for <strong>7–9 minutes</strong>.</div></div>
+          <div class="cooking-step"><div class="step-num" style="color: var(--hargow)">or</div><div class="step-text">Remove product from packaging and place in a microwave safe dish. Sprinkle water on the product (1 tsp per piece) and cover with lid. Heat on medium/high (900W) for <strong>3–4 minutes</strong>.</div></div>
+          <div class="cooking-step"><div class="step-num" style="color: var(--hargow)">!</div><div class="step-text">Product to be cooked through before consumption.</div></div>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Allergens</div>
+        <div class="allergen-tags">
+          <span class="allergen-tag">Crustacean</span><span class="allergen-tag">Wheat</span><span class="allergen-tag">Gluten</span><span class="allergen-tag">Soy</span><span class="allergen-tag">Sesame</span><span class="allergen-tag">Egg</span>
+        </div>
+      </div>
+      <div class="spec-section">
+        <div class="spec-section-title">Ingredients</div>
+        <p class="ingredients-text">Prawns (Penaeus vannamei) (<strong>crustacean</strong>) (30%) [contains salt, acidity regulators (331, 500)], Water, <strong>Wheat</strong> Starch, Bamboo Shoots, Tapioca Starch, Potato Starch, Vegetable Oil [<strong>soy</strong>, <strong>sesame</strong>], Carrot, Sugar, <strong>Egg</strong> White Powder, Salt, Yeast Extract, Pepper.</p>
+      </div>
+    </div>
+    <div class="product-right">
+      <img class="box-img" src="assets/images/2924-carton.png" alt="Prawn Hargow carton">
+      <div class="spec-section nutrition-section">
+        <div class="spec-section-title">Nutrition Information</div>
+        <p class="serving-note">Serving Size: 125g (5 pcs) &nbsp;|&nbsp; Servings per pack: 40</p>
+        <table class="nutrition-table">
+          <thead><tr><th>Nutrient</th><th>Per Serving</th><th>Per 100g</th></tr></thead>
+          <tbody>
+            <tr class="bold-row"><td>Energy</td><td>881kJ</td><td>705kJ</td></tr>
+            <tr class="bold-row"><td>Protein</td><td>7.0g</td><td>5.6g</td></tr>
+            <tr class="bold-row"><td>Fat, Total</td><td>6.8g</td><td>5.4g</td></tr>
+            <tr class="sub-row"><td>– Saturated</td><td>1.1g</td><td>0.8g</td></tr>
+            <tr class="bold-row"><td>Carbohydrate</td><td>29.5g</td><td>23.6g</td></tr>
+            <tr class="sub-row"><td>– Sugars</td><td>3.0g</td><td>2.4g</td></tr>
+            <tr class="bold-row"><td>Sodium</td><td>391mg</td><td>313mg</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="slide-bottom-bar" style="background: var(--hargow)"></div>
 </div>
 
 

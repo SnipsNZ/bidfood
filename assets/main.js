@@ -5,6 +5,10 @@ const titleSlides = [
   { color: 'var(--tonkotsu)', bowlId: 'bowl0', nameId: 'name0' },
   { color: 'var(--wonton)',   bowlId: 'bowl1', nameId: 'name1' },
   { color: 'var(--dandan)',   bowlId: 'bowl2', nameId: 'name2' },
+  { color: 'var(--gyoza)',    bowlId: 'bowl3', nameId: 'name3' },
+  { color: 'var(--dumpling)', bowlId: 'bowl4', nameId: 'name4' },
+  { color: 'var(--shumai)',   bowlId: 'bowl5', nameId: 'name5' },
+  { color: 'var(--hargow)',   bowlId: 'bowl6', nameId: 'name6' },
 ];
 
 let currentTitleSlide = 0;
@@ -59,7 +63,7 @@ function showTitleSlide() {
 
 function showProductSlide(n) {
   document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
-  const ids = [null, 'slide-tonkotsu', 'slide-wonton', 'slide-dandan'];
+  const ids = [null, 'slide-tonkotsu', 'slide-wonton', 'slide-dandan', 'slide-gyoza', 'slide-dumpling', 'slide-shumai', 'slide-hargow'];
   const el = document.getElementById(ids[n]);
   if (!el) return;
   el.classList.add('active', 'entering');
@@ -70,7 +74,7 @@ function showProductSlide(n) {
   if (productTimer) {
     clearInterval(productTimer);
     productTimer = setInterval(() => {
-      currentProductIdx = (currentProductIdx % 3) + 1;
+      currentProductIdx = (currentProductIdx % 7) + 1;
       showProductSlide(currentProductIdx);
     }, 10000);
   }
@@ -87,13 +91,13 @@ document.addEventListener('keydown', e => {
   if (!active) return;
   if (active.id === 'title-slide') {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextTitleSlide();
-    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   goToTitleSlide((currentTitleSlide + 2) % 3);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   goToTitleSlide((currentTitleSlide + 6) % 7);
     if (e.key === 'Enter' || e.key === ' ') showProductSlide(currentTitleSlide + 1);
   } else {
-    const order = ['slide-tonkotsu', 'slide-wonton', 'slide-dandan'];
+    const order = ['slide-tonkotsu', 'slide-wonton', 'slide-dandan', 'slide-gyoza', 'slide-dumpling', 'slide-shumai', 'slide-hargow'];
     const idx = order.indexOf(active.id);
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-      if (idx < 2) showProductSlide(idx + 2); else showTitleSlide();
+      if (idx < 6) showProductSlide(idx + 2); else showTitleSlide();
     }
     if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
       if (idx > 0) showProductSlide(idx); else showTitleSlide();
@@ -130,7 +134,7 @@ function startProductPlay() {
   btn.title = 'Pause';
   btn.classList.add('active');
   productTimer = setInterval(() => {
-    currentProductIdx = (currentProductIdx % 3) + 1;
+    currentProductIdx = (currentProductIdx % 7) + 1;
     showProductSlide(currentProductIdx);
   }, 10000);
 }

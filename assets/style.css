@@ -11,6 +11,10 @@
   --tonkotsu: #D4890A;
   --wonton: #2E9E72;
   --dandan: #C0394A;
+  --gyoza:    #C4A020;
+  --dumpling: #8DC030;
+  --shumai:   #4AB8D8;
+  --hargow:   #E07028;
   --cream: #F5F2EC;
   --charcoal: #1A1A1A;
   --mid-grey: #888;
@@ -621,6 +625,14 @@ body.dark-mode #slide-dandan   { background: #1C1C1E; }
 body.tinted-mode #slide-tonkotsu { background: #4a3200; }
 body.tinted-mode #slide-wonton   { background: #0f3d26; }
 body.tinted-mode #slide-dandan   { background: #42101a; }
+body.dark-mode #slide-gyoza,
+body.dark-mode #slide-dumpling,
+body.dark-mode #slide-shumai,
+body.dark-mode #slide-hargow   { background: #1C1C1E; }
+body.tinted-mode #slide-gyoza    { background: #3a2e00; }
+body.tinted-mode #slide-dumpling { background: #1e3a00; }
+body.tinted-mode #slide-shumai   { background: #003a4a; }
+body.tinted-mode #slide-hargow   { background: #3a1800; }
 body.dark-ui .product-center {
   border-left-color: #444;
   border-right-color: #444;
