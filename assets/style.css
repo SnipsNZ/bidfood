@@ -292,6 +292,9 @@ body.light-mode .nav-logo {
   transition: color 0.2s ease;
   border-bottom: 3px solid transparent;
   position: relative; top: 1px;
+  white-space: normal;
+  line-height: 1.25;
+  text-align: center;
 }
 .nav-tab:hover { color: rgba(255,255,255,0.8); }
 .nav-tab.active { color: white; }
