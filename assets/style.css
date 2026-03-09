@@ -174,7 +174,7 @@ html, body {
 
 /* NAV BAR */
 .slide-nav-bar {
-  height: 7vh;
+  height: 14vh;
   background: var(--charcoal);
   display: flex;
   align-items: center;
@@ -186,12 +186,12 @@ html, body {
 
 .nav-logo {
   /* logo_white.png — white marks on transparent, shows on dark nav bar */
-  height: 4.5vh;
+  height: 12vh;
   display: block;
   flex-shrink: 0;
 }
 
-.nav-tabs { display: flex; }
+.nav-tabs { display: flex; margin-left: auto; }
 
 .nav-tab {
   font-family: 'Gotham', sans-serif;
@@ -199,7 +199,7 @@ html, body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0 1.3vw;
-  height: 7vh;
+  height: 14vh;
   background: transparent;
   border: none;
   color: rgba(255,255,255,0.4);
