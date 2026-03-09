@@ -182,13 +182,17 @@ html, body {
   padding: 0 200px 0 3vw;
   flex-shrink: 0;
   z-index: 10;
+  overflow: visible;
+  position: relative;
 }
 
 .nav-logo {
   /* logo_white.png — white marks on transparent, shows on dark nav bar */
-  height: 4.5vh;
+  width: clamp(80px, 10vw, 140px);
   display: block;
   flex-shrink: 0;
+  position: relative;
+  top: clamp(20px, 4vh, 50px);
 }
 
 .nav-tabs { display: flex; }
