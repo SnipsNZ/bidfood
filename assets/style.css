@@ -265,8 +265,8 @@ html, body {
   height: 23vh;
   position: absolute;
   top: 0;
-  /* left edge at right end of "CODE" in Short Code pack-label */
-  left: 51vw;
+  /* left edge halfway between product-left right edge (30vw) and end of "48 ctns" (~51vw) */
+  left: 40.5vw;
   z-index: 1;
 }
 
