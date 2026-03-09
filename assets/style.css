@@ -188,7 +188,7 @@ html, body {
 
 .nav-logo {
   /* logo_white.png — white marks on transparent, shows on dark nav bar */
-  width: clamp(80px, 10vw, 140px);
+  width: clamp(100px, 13vw, 180px);
   display: block;
   flex-shrink: 0;
   position: relative;
