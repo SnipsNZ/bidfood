@@ -259,13 +259,15 @@ html, body {
 }
 
 .nav-logo {
-  /* logo_white.png — white marks on transparent, shows on dark nav bar */
-  width: clamp(100px, 13vw, 180px);
+  /* positioned relative to .slide (position:absolute), obscured at top by nav z-index:10 */
   display: block;
+  width: auto;
+  height: 23vh;
   position: absolute;
-  top: clamp(20px, 4vh, 50px);
-  /* right edge aligns with gap between Dumpling (tab 5) and Prawn (tab 6) */
-  left: calc(50vw - clamp(100px, 13vw, 180px));
+  top: 0;
+  /* left edge at right end of "CODE" in Short Code pack-label */
+  left: 51vw;
+  z-index: 1;
 }
 
 body.light-mode .slide-nav-bar {
