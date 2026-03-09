@@ -257,6 +257,7 @@ html, body {
   text-transform: uppercase;
   color: var(--mid-grey);
   flex-shrink: 0;
+  text-align: right;
 }
 
 .product-title {
@@ -266,6 +267,7 @@ html, body {
   line-height: 0.93;
   letter-spacing: -0.01em;
   flex-shrink: 0;
+  text-align: right;
 }
 
 .product-color-bar {
