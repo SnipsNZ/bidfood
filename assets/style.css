@@ -262,10 +262,10 @@ html, body {
   /* logo_white.png — white marks on transparent, shows on dark nav bar */
   width: clamp(100px, 13vw, 180px);
   display: block;
-  flex-shrink: 0;
-  position: relative;
+  position: absolute;
   top: clamp(20px, 4vh, 50px);
-  left: 4.5vw;
+  /* right edge aligns with gap between Dumpling (tab 5) and Prawn (tab 6) */
+  left: calc(50vw - clamp(100px, 13vw, 180px));
 }
 
 body.light-mode .slide-nav-bar {
