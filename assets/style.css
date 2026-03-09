@@ -276,6 +276,10 @@ body.light-mode .slide-nav-bar {
   background: white;
 }
 
+body.tinted-mode .nav-logo {
+  content: url('images/logo_black.png');
+}
+
 body.light-mode .nav-logo {
   content: url('images/logo_black.png');
 }
