@@ -265,7 +265,7 @@ html, body {
   flex-shrink: 0;
   position: relative;
   top: clamp(20px, 4vh, 50px);
-  left: -1vw;
+  left: 4.5vw;
 }
 
 body.light-mode .slide-nav-bar {
