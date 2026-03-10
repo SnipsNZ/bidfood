@@ -67,6 +67,7 @@ function showTitleSlide() {
   el.classList.add('active', 'entering');
   setTimeout(() => el.classList.remove('entering'), 500);
   document.body.classList.remove('on-product');
+  document.body.classList.add('on-title');
   pauseProductPlay();
   if (autoTimer) clearInterval(autoTimer);
   autoTimer = setInterval(nextTitleSlide, 5000);
@@ -116,6 +117,7 @@ function showProductSlide(n, direction) {
   }
 
   document.body.classList.add('on-product');
+  document.body.classList.remove('on-title');
   currentProductIdx = n;
   updateWatermark(n);
 
@@ -190,6 +192,7 @@ document.addEventListener('touchend', e => {
 // INIT
 // ========================
 document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('on-title');
   applyTheme();
   autoTimer = setInterval(nextTitleSlide, 5000);
 });
