@@ -18,24 +18,18 @@ function goToTitleSlide(idx) {
   const prev = titleSlides[currentTitleSlide];
   const next = titleSlides[idx];
 
-  // hide previous bowl — reset animation by cloning
   const prevBowl = document.getElementById(prev.bowlId);
   prevBowl.classList.remove('visible');
-
   document.getElementById(prev.nameId).classList.remove('active');
 
   currentTitleSlide = idx;
 
-  // show next bowl — re-trigger zoom animation
   const nextBowl = document.getElementById(next.bowlId);
   nextBowl.classList.remove('visible');
-  // force reflow so animation restarts
   void nextBowl.offsetWidth;
   nextBowl.classList.add('visible');
-
   document.getElementById(next.nameId).classList.add('active');
 
-  // update dots
   document.querySelectorAll('.title-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
 
   if (autoTimer) clearInterval(autoTimer);
@@ -47,8 +41,26 @@ function nextTitleSlide() {
 }
 
 // ========================
+// WATERMARK COLOUR
+// ========================
+const accentColors = ['', '#D4890A', '#2E9E72', '#C0394A', '#C4A020', '#8DC030', '#4AB8D8', '#E07028'];
+
+function updateWatermark(n) {
+  const logo = document.querySelector('.nav-logo');
+  if (!logo) return;
+  if (document.body.classList.contains('dark-mode') && n >= 1 && n <= 7) {
+    logo.style.backgroundColor = accentColors[n];
+  } else {
+    logo.style.backgroundColor = '';
+  }
+}
+
+// ========================
 // PAGE NAVIGATION
 // ========================
+const SWIPE_MS = 380;
+let isAnimating = false;
+
 function showTitleSlide() {
   document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
   const el = document.getElementById('title-slide');
@@ -56,51 +68,86 @@ function showTitleSlide() {
   setTimeout(() => el.classList.remove('entering'), 500);
   document.body.classList.remove('on-product');
   pauseProductPlay();
-  // restart slideshow
   if (autoTimer) clearInterval(autoTimer);
   autoTimer = setInterval(nextTitleSlide, 5000);
 }
 
-function showProductSlide(n) {
-  document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
-  const ids = [null, 'slide-tonkotsu', 'slide-wonton', 'slide-dandan', 'slide-gyoza', 'slide-dumpling', 'slide-shumai', 'slide-hargow'];
-  const el = document.getElementById(ids[n]);
-  if (!el) return;
-  el.classList.add('active', 'entering');
-  setTimeout(() => el.classList.remove('entering'), 500);
+const productIds = [null, 'slide-tonkotsu', 'slide-wonton', 'slide-dandan', 'slide-gyoza', 'slide-dumpling', 'slide-shumai', 'slide-hargow'];
+
+function showProductSlide(n, direction) {
+  if (isAnimating) return;
+  const nextEl = document.getElementById(productIds[n]);
+  if (!nextEl) return;
+
+  const prevEl = document.querySelector('.slide.active');
+
+  // Determine swipe direction if not given
+  if (direction === undefined) {
+    if (!prevEl || prevEl.id === 'title-slide') {
+      direction = 'forward';
+    } else {
+      const prevIdx = productIds.indexOf(prevEl.id);
+      direction = n > prevIdx ? 'forward' : 'backward';
+    }
+  }
+
+  const fromTitle = !prevEl || prevEl.id === 'title-slide';
+
+  if (fromTitle) {
+    // Fade in from title (no swipe)
+    if (prevEl) prevEl.classList.remove('active');
+    nextEl.classList.add('active', 'entering');
+    setTimeout(() => nextEl.classList.remove('entering'), 500);
+  } else {
+    // Swipe transition
+    isAnimating = true;
+    const outClass = direction === 'forward' ? 'swipe-out-left'  : 'swipe-out-right';
+    const inClass  = direction === 'forward' ? 'swipe-in-right'  : 'swipe-in-left';
+
+    prevEl.classList.remove('active');
+    prevEl.classList.add(outClass);
+    nextEl.classList.add('active', inClass);
+
+    setTimeout(() => {
+      prevEl.classList.remove(outClass);
+      nextEl.classList.remove(inClass);
+      isAnimating = false;
+    }, SWIPE_MS);
+  }
+
   document.body.classList.add('on-product');
   currentProductIdx = n;
-  // reset product auto-play timer on manual navigation
+  updateWatermark(n);
+
+  if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
   if (productTimer) {
     clearInterval(productTimer);
     productTimer = setInterval(() => {
       currentProductIdx = (currentProductIdx % 7) + 1;
-      showProductSlide(currentProductIdx);
+      showProductSlide(currentProductIdx, 'forward');
     }, 10000);
   }
-  // pause title slideshow
-  if (autoTimer) clearInterval(autoTimer);
-  autoTimer = null;
 }
 
 // ========================
 // KEYBOARD NAVIGATION
 // ========================
 document.addEventListener('keydown', e => {
+  if (isAnimating) return;
   const active = document.querySelector('.slide.active');
   if (!active) return;
   if (active.id === 'title-slide') {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextTitleSlide();
     if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   goToTitleSlide((currentTitleSlide + 6) % 7);
-    if (e.key === 'Enter' || e.key === ' ') showProductSlide(currentTitleSlide + 1);
+    if (e.key === 'Enter' || e.key === ' ') showProductSlide(currentTitleSlide + 1, 'forward');
   } else {
     const order = ['slide-tonkotsu', 'slide-wonton', 'slide-dandan', 'slide-gyoza', 'slide-dumpling', 'slide-shumai', 'slide-hargow'];
     const idx = order.indexOf(active.id);
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-      if (idx < 6) showProductSlide(idx + 2); else showTitleSlide();
+      if (idx < 6) showProductSlide(idx + 2, 'forward'); else showTitleSlide();
     }
     if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-      if (idx > 0) showProductSlide(idx); else showTitleSlide();
+      if (idx > 0) showProductSlide(idx, 'backward'); else showTitleSlide();
     }
     if (e.key === 'Escape') {
       const calc = document.getElementById('calc-overlay');
@@ -109,6 +156,35 @@ document.addEventListener('keydown', e => {
     }
   }
 });
+
+// ========================
+// TOUCH / SWIPE
+// ========================
+let touchStartX = 0;
+let touchStartY = 0;
+
+document.addEventListener('touchstart', e => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+  if (isAnimating) return;
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return; // too short or more vertical
+
+  const active = document.querySelector('.slide.active');
+  if (!active || active.id === 'title-slide') return;
+
+  const order = ['slide-tonkotsu', 'slide-wonton', 'slide-dandan', 'slide-gyoza', 'slide-dumpling', 'slide-shumai', 'slide-hargow'];
+  const idx = order.indexOf(active.id);
+  if (dx < 0) {
+    if (idx < 6) showProductSlide(idx + 2, 'forward'); else showTitleSlide();
+  } else {
+    if (idx > 0) showProductSlide(idx, 'backward'); else showTitleSlide();
+  }
+}, { passive: true });
 
 // ========================
 // INIT
@@ -135,7 +211,7 @@ function startProductPlay() {
   btn.classList.add('active');
   productTimer = setInterval(() => {
     currentProductIdx = (currentProductIdx % 7) + 1;
-    showProductSlide(currentProductIdx);
+    showProductSlide(currentProductIdx, 'forward');
   }, 10000);
 }
 
@@ -173,6 +249,7 @@ function applyTheme() {
     btn.title = 'Themed dark mode';
     btn.textContent = '●';
   }
+  updateWatermark(currentProductIdx);
 }
 
 function toggleDarkMode() {
@@ -206,7 +283,6 @@ function calcPrice() {
   const fmt  = v => '$' + v.toFixed(2);
   const dash = '—';
 
-  // Prep labour cost: time in hours × hourly rate
   const prepLabour = (prepTime / 60) * labourRate;
   document.getElementById('r-prep').textContent = prepLabour > 0 ? fmt(prepLabour) : dash;
 
@@ -219,13 +295,8 @@ function calcPrice() {
     return;
   }
 
-  // Landed cost: purchase price + freight $
   const landed = cost + freight;
-
-  // Total cost including prep labour
   const totalCost = landed + prepLabour;
-
-  // Sell price ex GST via target margin
   const marginFactor = margin < 100 ? (1 - margin / 100) : null;
   const exGST  = marginFactor ? totalCost / marginFactor : 0;
   const gstAmt = exGST * (gst / 100);
@@ -249,7 +320,6 @@ function toggleFullscreen() {
   }
 }
 
-// Update button icon when fullscreen state changes
 document.addEventListener('fullscreenchange', () => {
   const btn = document.getElementById('fullscreen-btn');
   btn.textContent = document.fullscreenElement ? '✕' : '⛶';
