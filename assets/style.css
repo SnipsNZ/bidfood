@@ -598,6 +598,13 @@ body.light-mode .nav-logo {
   color: var(--charcoal);
   line-height: 1.1;
 }
+#slide-tonkotsu .pack-val { color: var(--tonkotsu); }
+#slide-wonton   .pack-val { color: var(--wonton); }
+#slide-dandan   .pack-val { color: var(--dandan); }
+#slide-gyoza    .pack-val { color: var(--gyoza); }
+#slide-dumpling .pack-val { color: var(--dumpling); }
+#slide-shaomai  .pack-val { color: var(--shaomai); }
+#slide-hargow   .pack-val { color: var(--hargow); }
 
 /* NUTRITION TABLE */
 .serving-note {
