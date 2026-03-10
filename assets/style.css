@@ -633,7 +633,7 @@ body.light-mode .nav-logo {
 ======================== */
 #play-btn {
   position: fixed;
-  top: 14px;
+  top: calc((7vh - 36px) / 2);
   right: 148px;
   z-index: 9999;
   background: rgba(255,255,255,0.1);
@@ -659,7 +659,7 @@ body.on-product #play-btn { display: flex; }
 ======================== */
 #dark-btn {
   position: fixed;
-  top: 14px;
+  top: calc((7vh - 36px) / 2);
   right: 104px;
   z-index: 9999;
   background: rgba(255,255,255,0.1);
@@ -770,7 +770,7 @@ body.dark-ui .nutrition-table .bold-row td {
 ======================== */
 #calc-btn {
   position: fixed;
-  top: 14px;
+  top: calc((7vh - 36px) / 2);
   right: 60px;
   z-index: 9999;
   background: rgba(255,255,255,0.1);
@@ -965,7 +965,7 @@ body.dark-ui .nutrition-table .bold-row td {
 ======================== */
 #fullscreen-btn {
   position: fixed;
-  top: 14px;
+  top: calc((7vh - 36px) / 2);
   right: 16px;
   z-index: 9999;
   background: rgba(255,255,255,0.1);
@@ -985,3 +985,20 @@ body.dark-ui .nutrition-table .bold-row td {
 #fullscreen-btn:hover {
   background: rgba(255,255,255,0.22);
 }
+
+/* Light mode — dark colours for all fixed UI buttons */
+body.light-mode #play-btn,
+body.light-mode #dark-btn,
+body.light-mode #calc-btn,
+body.light-mode #fullscreen-btn {
+  background: rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.2);
+  color: rgba(0,0,0,0.65);
+}
+body.light-mode #play-btn:hover,
+body.light-mode #dark-btn:hover,
+body.light-mode #calc-btn:hover,
+body.light-mode #fullscreen-btn:hover { background: rgba(0,0,0,0.1); color: var(--charcoal); }
+body.light-mode #play-btn.active,
+body.light-mode #dark-btn.active,
+body.light-mode #calc-btn.active      { background: rgba(0,0,0,0.12); border-color: rgba(0,0,0,0.45); }
