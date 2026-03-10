@@ -7,7 +7,7 @@ const titleSlides = [
   { color: 'var(--dandan)',   bowlId: 'bowl2', nameId: 'name2' },
   { color: 'var(--gyoza)',    bowlId: 'bowl3', nameId: 'name3' },
   { color: 'var(--dumpling)', bowlId: 'bowl4', nameId: 'name4' },
-  { color: 'var(--shumai)',   bowlId: 'bowl5', nameId: 'name5' },
+  { color: 'var(--shaomai)',   bowlId: 'bowl5', nameId: 'name5' },
   { color: 'var(--hargow)',   bowlId: 'bowl6', nameId: 'name6' },
 ];
 
@@ -72,7 +72,7 @@ function showTitleSlide() {
   autoTimer = setInterval(nextTitleSlide, 5000);
 }
 
-const productIds = [null, 'slide-tonkotsu', 'slide-wonton', 'slide-dandan', 'slide-gyoza', 'slide-dumpling', 'slide-shumai', 'slide-hargow'];
+const productIds = [null, 'slide-tonkotsu', 'slide-wonton', 'slide-dandan', 'slide-gyoza', 'slide-dumpling', 'slide-shaomai', 'slide-hargow'];
 
 function showProductSlide(n, direction) {
   if (isAnimating) return;
@@ -141,7 +141,7 @@ document.addEventListener('keydown', e => {
     if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   goToTitleSlide((currentTitleSlide + 6) % 7);
     if (e.key === 'Enter' || e.key === ' ') showProductSlide(currentTitleSlide + 1, 'forward');
   } else {
-    const order = ['slide-tonkotsu', 'slide-wonton', 'slide-dandan', 'slide-gyoza', 'slide-dumpling', 'slide-shumai', 'slide-hargow'];
+    const order = ['slide-tonkotsu', 'slide-wonton', 'slide-dandan', 'slide-gyoza', 'slide-dumpling', 'slide-shaomai', 'slide-hargow'];
     const idx = order.indexOf(active.id);
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
       if (idx < 6) showProductSlide(idx + 2, 'forward'); else showTitleSlide();
@@ -177,7 +177,7 @@ document.addEventListener('touchend', e => {
   const active = document.querySelector('.slide.active');
   if (!active || active.id === 'title-slide') return;
 
-  const order = ['slide-tonkotsu', 'slide-wonton', 'slide-dandan', 'slide-gyoza', 'slide-dumpling', 'slide-shumai', 'slide-hargow'];
+  const order = ['slide-tonkotsu', 'slide-wonton', 'slide-dandan', 'slide-gyoza', 'slide-dumpling', 'slide-shaomai', 'slide-hargow'];
   const idx = order.indexOf(active.id);
   if (dx < 0) {
     if (idx < 6) showProductSlide(idx + 2, 'forward'); else showTitleSlide();
