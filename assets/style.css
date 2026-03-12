@@ -819,6 +819,7 @@ body.dark-ui .nutrition-table .bold-row td {
   border-radius: 4px;
   line-height: 1;
 }
+body.on-title #calc-btn { display: none; }
 #calc-btn:hover { background: rgba(255,255,255,0.22); }
 #calc-btn.active { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.6); }
 
